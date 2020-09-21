@@ -1,0 +1,212 @@
+\documentclass[a4paper,12pt,twoside]{report}
+\usepackage[margin=1in,headsep=1cm,footskip=1cm]{geometry}
+	\setcounter{tocdepth}{3}
+	\setcounter{secnumdepth}{3}
+\usepackage[main=english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+	\pagestyle{fancy}
+	\renewcommand{\chaptermark}[1]{\markboth{\textbf{\chaptername\ \thechapter.\ #1}}{}}
+	\renewcommand{\headrulewidth}{0.125mm}
+	%\renewcommand{\footrulewidth}{0.125mm}
+%\usepackage{natbib}
+	%\bibliographystyle{chicago}
+\usepackage{setspace}
+	%\setstretch{1.0} %1.0 or 1.3 or 1.6 or \singlespacing or \onehalfspacing or \doublespacing
+	\parindent 1cm
+	\parskip 6pt
+\usepackage{tikz}
+	\usetikzlibrary{arrows,chains,matrix,positioning,scopes}
+	\tikzset{>=triangle 45} %latex or latex' or stealth or stealth'
+%\usepackage{pgfplots}
+\usepackage{graphics}
+	\graphicspath{{figures/}}
+\usepackage{amsmath}
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{bookmark}
+\usepackage{booktabs}
+\usepackage[labelfont=bf,center]{caption}
+\usepackage{subcaption}
+\usepackage{enumerate}
+\usepackage{epstopdf}
+\usepackage{float}
+\usepackage[bottom]{footmisc}
+\usepackage{footnote}
+\usepackage{lipsum}
+\usepackage{longtable}
+\usepackage{threeparttable}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{pdflscape}
+\usepackage{rotating}
+\usepackage{siunitx}
+\usepackage{smartdiagram}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{csquotes}
+\usepackage[backend=biber, style=authoryear-icomp]{biblatex}
+\addbibresource{bib_file.bib}
+
+\begin{document}
+\begin{onehalfspace}
+
+	\fancyhf{} % Clears all page headers and footers
+	\rhead{\thepage}
+	\lhead{\nouppercase{\leftmark}} % Sets the right side header to show the page number
+
+\pdfbookmark[chapter]{Titlepage}{titlepage}
+\begin{titlepage}
+\pagenumbering{Alph}
+\begin{center}
+
+\textsc{\huge Università degli Studi di Trento}\\[-0.375cm] % University name
+\rule{0.85\linewidth}{0.125mm}\\[0.25cm]
+\textsc{\Large Department of Economics and Management}\\[1.25cm] % University requirement text
+\includegraphics[width=0.3\linewidth]{logo_unitn.png}\\[1.25cm] % University/department logo - uncomment to place it
+\textsc{\LARGE Master of Science in Economics}\\[2cm] % University programme
+\textsc{\LARGE Master Thesis}\\[0.5cm] % Thesis type
+
+\rule{\linewidth}{0.5mm}\\[0.75cm] % Horizontal line
+{\Large \textbf{Using Machine Learning for Airbnb Price Prediction}}\\[0.5cm] % Thesis title
+\rule{\linewidth}{0.5mm}\\[1cm] % Horizontal line
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+Author:\\
+\textsc{Duc Tuong Vu} % Author name - remove the \href bracket to remove the link
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+Supervisor:\\
+Prof. \textsc{XXX} % Supervisor name - remove the \href bracket to remove the link
+\end{flushright}
+\end{minipage}\\[3cm]
+
+\textsc{Academic Year 2020/2021}\\[0.25cm] % University requirement text
+
+\vfill
+
+\end{center}
+\end{titlepage}
+
+\clearpage
+	\fancyhf{}
+	\rhead{\thepage}
+	\lhead{\textbf{Acknowledgments}}
+\phantomsection
+%\pdfbookmark[chapter]{Acknowledgments}{Acknowledgments}
+\addcontentsline{toc}{chapter}{Acknowledgments}
+\pagenumbering{roman}
+\chapter*{Acknowledgments}
+\label{c:ack}
+\input{chapters/ack.tex}
+
+
+
+
+\clearpage
+	\fancyhf{}
+	\rhead{\thepage}
+	\lhead{\textbf{ \nouppercase{\leftmark}} }
+\phantomsection
+%\pdfbookmark{\contentsname}{toc}
+\addcontentsline{toc}{chapter}{Contents}
+\tableofcontents
+
+\clearpage
+\phantomsection
+%\pdfbookmark[chapter]{List of Figures}{lof}
+\addcontentsline{toc}{chapter}{List of figures}
+\listoffigures
+
+\clearpage
+\phantomsection
+%\pdfbookmark[chapter]{List of Tables}{lot}
+\addcontentsline{toc}{chapter}{List of tables}
+\listoftables
+
+\clearpage
+	\fancyhf{}
+	\rhead{\thepage}
+	\lhead{\textbf{Abstract}}
+\phantomsection
+%\pdfbookmark[chapter]{Abstract}{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\chapter*{Abstract}
+\label{c:abstract}
+\input{chapters/abstract.tex}
+
+
+\clearpage
+	\fancyhf{}
+	\rhead{\thepage}
+	\lhead{\nouppercase{\leftmark}}
+\pagenumbering{arabic}
+\chapter{Introduction}
+\label{c:intro}
+\input{chapters/1-intro.tex}
+
+
+
+\clearpage
+\chapter{Data Set}
+\label{c:dataset}
+\input{chapters/2-dataset.tex}
+
+
+\clearpage
+\chapter{Data Modelling Methods}
+\label{c:methods}
+\input{chapters/3-methods.tex}
+
+
+\clearpage
+\chapter{Results}
+\label{c:results}
+\input{chapters/4-results.tex}
+
+
+\clearpage
+\chapter{Conclusion}
+\label{c:conclusion}
+\input{chapters/5-conclusion.tex}
+
+\clearpage
+	\setcounter{chapter}{1}
+	\fancyhf{}
+	\rhead{\thepage}
+	\lhead{\textbf{Appendices}}
+\phantomsection
+%\pdfbookmark[chapter]{Appendices}{Appendices}
+\addcontentsline{toc}{chapter}{Appendices}
+\renewcommand{\thechapter}{\Alph{chapter}}
+\pagenumbering{roman}
+\chapter*{Appendices}
+\label{chap_appendices}
+\input{chapters/appendices.tex}
+
+
+
+\clearpage
+	\fancyhf{}
+	\rhead{\thepage}
+	\lhead{\textbf{ \nouppercase{\leftmark}} }
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+%\pagenumbering{roman}
+%\bibliographystyle{chicago}
+%\bibliography{bib_file}
+\printbibliography
+
+%\clearpage
+%\renewcommand{\thefigure}{A\arabic{figure}}
+%\renewcommand{\thetable}{A\arabic{table}}
+%\setcounter{figure}{0}
+%\setcounter{table}{0}
+%\section*{Appendix}
+%\label{appendix}
+\end{onehalfspace}
+\end{document}
