@@ -1,0 +1,115 @@
+\begin{figure}[h!]\centering
+  \subfigure[Integrated luminosity]{\label{fig:lumi_int_dq} \includegraphics[width=0.48\textwidth]{intlumivstime2011-2012DQ.png}}
+  \subfigure[Mean number of interactions per bunch crossing]{\label{fig:mu_2011_20112} \includegraphics[width=0.48\textwidth]{mu_2011_2012-nov.png}}\\
+\caption{(a): luminosity delivered and recorded in ATLAS. (b): mean number of interaction per bunch crossing in 2011 and 2012 data \cite{twiki_lumi}.}
+\label{fig:intlumi_atlas}
+\end{figure}
+
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{graph1}
+         \caption{$y=x$}
+         \label{fig:y equals x}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{graph2}
+         \caption{$y=3sinx$}
+         \label{fig:three sin x}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.3\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{graph3}
+         \caption{$y=5/x$}
+         \label{fig:five over x}
+     \end{subfigure}
+        \caption{Three simple graphs}
+        \label{fig:three graphs}
+\end{figure}
+
+\documentclass{article}
+\begin{document}
+\begin{tabular}{cccc}
+  One & Two & Three & Four \\
+  Een & Twee & Drie & Vier \\
+  One & Two &
+    \begin{tabular}{@{}c@{}}Three \\ Drie\end{tabular}
+  & Four
+\end{tabular}
+\end{document}
+
+host\_listings\_count & how many listings the host has in total \\
+host\_identity\_verified & whether or not the host has been verified with id \\
+neighbourhood\_cleansed 7 the London borough the property is in
+property\_type & type of property, e.g. house or flat \\
+room\_type & type of listing, e.g. entire home, private room or shared room \\
+accommodates & how many people the property accommodates \\
+bathrooms & number of bathrooms \\
+bedrooms & number of bedrooms \\
+beds & number of beds \\
+bed\_type & type of bed, e.g. real bed or sofa-bed \\
+amenities & list of amenities \\
+price & nightly advertised price (the target variable) \\
+security\_deposit & the amount required as a security deposit \\
+cleaning\_fee & the amount of the cleaning fee (a fixed amount paid per booking)
+\\
+guests\_included & the number of guests included in the booking fee \\
+extra\_people & the price per additional guest above the guests_included price
+\\
+minimum\_nights & the minimum length of stay \\
+maximum\_nights & the maximum length of stay \\
+calendar\_updated & when the host last updated the calendar \\
+availability\_30 & how many nights are available to be booked in the next 30
+days \\
+availability\_60 & how many nights are available to be booked in the next 60
+days \\
+availability\_90 & how many nights are available to be booked in the next 90
+days \\
+availability_365 - how many nights are available to be booked in the next 365 days
+number\_of\_reviews & the number of reviews left for the property \\
+number\_of\_reviews\_ltm & the number of reviews left for the property in the
+last twelve months \\
+first\_review & the date of the first review \\
+last\_review & the date of the most recent review \\
+review\_scores\_rating & guests can score properties overall from 1 to 5 stars
+\\
+review\_scores\_accuracy & guests can score the accuracy of a property's
+description from 1 to 5 stars \\
+review\_scores\_cleanliness & guests can score a property's cleanliness from 1
+to 5 stars \\
+review\_scores\_checkin & guests can score their check-in from 1 to 5 stars \\
+review\_scores\_communication & guests can score a host's communication from 1
+to 5 stars \\
+review\_scores\_location & guests can score a property's location from 1 to 5
+stars \\
+review\_scores\_value & guests can score a booking's value for money from 1 to 5
+stars \\
+instant\_bookable & whether or not the property can be instant booked (i.e.
+booked straight away, without having to message the host first and wait to be
+accepted) \\
+cancellation\_policy & the type of cancellation policy, e.g. strict or moderate
+\\
+reviews\_per\_month & calculated field of the average number of reviews left by
+guest each month \\
+
+
+
+air\_conditioning, bed\_linen, tv, coffee\_machine, cooking\_basics,
+white\_goods, elevator, child\_friendly, parking, host\_greeting,
+internet, long\_term\_stays, pets\_allowed, private\_entrance,
+self\_check\_in
+
+
+
+```tex
+\begin{figure}
+    \includegraphics{./imageName}
+    \caption{Caption of the image.} \label{imageLabel}
+    \source{Source of the image.}
+\end{figure}
+```
+

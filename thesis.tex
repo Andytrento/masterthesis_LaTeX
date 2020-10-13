@@ -8,6 +8,7 @@
 	\pagestyle{fancy}
 	\renewcommand{\chaptermark}[1]{\markboth{\textbf{\chaptername\ \thechapter.\ #1}}{}}
 	\renewcommand{\headrulewidth}{0.125mm}
+	\setlength{\headheight}{15pt}
 	%\renewcommand{\footrulewidth}{0.125mm}
 %\usepackage{natbib}
 	%\bibliographystyle{chicago}
@@ -19,6 +20,12 @@
 	\usetikzlibrary{arrows,chains,matrix,positioning,scopes}
 	\tikzset{>=triangle 45} %latex or latex' or stealth or stealth'
 %\usepackage{pgfplots}
+%tikzplotlib
+\usepackage{pgfplots}
+\DeclareUnicodeCharacter{2212}{−}
+\usepgfplotslibrary{groupplots,dateplot}
+\usetikzlibrary{patterns,shapes.arrows}
+\pgfplotsset{compat=newest}
 \usepackage{graphics}
 	\graphicspath{{figures/}}
 \usepackage{amsmath}
@@ -27,6 +34,7 @@
 \usepackage{bookmark}
 \usepackage{booktabs}
 \usepackage[labelfont=bf,center]{caption}
+\newcommand{\source}[1]{\caption*{Source: {#1}} }
 \usepackage{subcaption}
 \usepackage{enumerate}
 \usepackage{epstopdf}
@@ -46,8 +54,12 @@
 \usepackage{hyperref}
 \usepackage{url}
 \usepackage{csquotes}
-\usepackage[backend=biber, style=authoryear-icomp]{biblatex}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+%\usepackage[backend=biber, style=authoryear-icomp]{biblatex}
+%\usepackage[backend=biber,style=numeric,autocite=plain,sorting=none]{biblatex}
+\usepackage[backend=biber]{biblatex}
 \addbibresource{bib_file.bib}
+\DeclareUnicodeCharacter{2212}{-}
 
 \begin{document}
 \begin{onehalfspace}
@@ -156,23 +168,27 @@ Prof. \textsc{XXX} % Supervisor name - remove the \href bracket to remove the li
 \label{c:dataset}
 \input{chapters/2-dataset.tex}
 
+\clearpage
+\chapter{Exploratory Data Analysis}
+\label{c:eda}
+\input{chapters/3-eda.tex}
 
 \clearpage
 \chapter{Data Modelling Methods}
 \label{c:methods}
-\input{chapters/3-methods.tex}
+\input{chapters/4-methods.tex}
 
 
 \clearpage
-\chapter{Results}
+\chapter{Experiments and Results}
 \label{c:results}
-\input{chapters/4-results.tex}
+\input{chapters/5-results.tex}
 
 
 \clearpage
 \chapter{Conclusion}
 \label{c:conclusion}
-\input{chapters/5-conclusion.tex}
+\input{chapters/6-conclusion.tex}
 
 \clearpage
 	\setcounter{chapter}{1}
