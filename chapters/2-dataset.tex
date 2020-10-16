@@ -53,15 +53,16 @@ performance and stability.
 \begin{itemize}
 
     \item We remove  predictors with a single unique value as they are  zero
-        variance predictors. These predictors are has\_availability,
-        host\_has\_profile\_pic, is\_business\_travel\_ready,
-        require\_guest\_phone\_verification, require\_guest\_profile\_picture,
-        requires\_license.
-
+        variance predictors. These predictors are \texttt{has\_availability},
+        \texttt{host\_has\_profile\_pic},\texttt{requires\_license},
+        \texttt{is\_business\_travel\_ready},
+        \texttt{require\_guest\_phone\_verification},\newline
+        \texttt{require\_guest\_profile\_picture} (See
+        \ref{fig:histogram-feature-distribution}) .
     \item It is beyond the scope of this study to explore the natural language
         processing for predictive modeling.  Therefore,  we will drop free-text
         columns for now, as will other columns that are not useful for
-        predicting price (e.g., URL, hostname, and other host-related features
+        predicting price (e.g., \texttt{url}, \texttt{hostname}, and other host-related features
         unrelated to the property).
 
     \item We drop feature which  adds relatively little information, or are
@@ -74,24 +75,27 @@ performance and stability.
 Missing data is a common issue in many data analysis applications.  Data may be
 missing due to problems with the process of collecting data or equipment
 malfunction. Some data may get lost due to system or human error while storing
-or transferring the data.  There are two approaches we take to handle missing
+or transferring the data.
+
+There are two approaches we take to handle missing
 data:
 \begin{enumerate}
-    \item Filling out missing value : In this approach, We drop the predictors
-that contain a majority of null entries.
+    \item Filling out missing value :  we drop the predictors
+        that contain a majority of null entries as in Table
+        ~\ref{tab:missing-value}.
     \item Filling in missing value:we perform data imputation, which means
         filling the missing data with some estimated ones. In particular,
 
         \begin{itemize}
 
             \item Missing values in numeric features such as the number of
-                bathrooms (bathrooms) bathrooms, the number of bedrooms
-                (bedrooms), the number of beds (beds) will be replaced with the
-                median.
+                bathrooms (\texttt{bathrooms}) bathrooms, the number of bedrooms
+                (\texttt{bedrooms}), the number of beds (\texttt{beds}) will be
+                replaced with the median.
 
             \item For monetary features such as the amount required as a
-                security deposit (security\_deposit), the amount of the cleaning
-                fee (cleaning\_fee), the price per additional guest
+                security deposit (\texttt{security\_deposit}), the amount of the cleaning
+                fee (\texttt{cleaning\_fee}), the price per additional guest
                 (extra\_people), having a missing value for them is the same as
                 having the value of \$0, so the missing values will be replaced
                 with 0. Similarly, an amenity that has a missing value will be replaced with 0.
@@ -99,23 +103,44 @@ that contain a majority of null entries.
         \end{itemize}
 \end{enumerate}
 
+\begin{table}[htp]
+    \centering
+    \caption{Columns with majority of null values}
+    \label{tab:missing-value}
+{\small
+\begin{tabular}{lr}
+\toprule
+{Column} &      Number of missing value \\
+\midrule
+host\_acceptance\_rate &  50599 \\
+jurisdiction\_names   &  50583 \\
+license              &  50577 \\
+square\_feet          &  50213 \\
+monthly\_price        &  45683 \\
+weekly\_price         &  44945 \\
+\bottomrule
+\end{tabular}
 
+}
+\end{table}
 
 \subsection{Feature Construction}
 
 \begin{itemize}
 
     \item We convert DateTime columns such as the date that the host first joined Airbnb
-    (host\_since) to measure the number of days a host has been on the platform,
-    measured from the date that the data was collected (host\_days\_active).
+        (\texttt{host\_since}) to measure the number of days a host has been on
+        the platform, measured from the date that the data was collected
+        (\texttt{host\_days\_active}).
 
     \item We create a new feature that measures the number of days between the first
-        review and  the date we collect the data (time\_since\_first\_review) from
-        the feature the date of the first review (first\_review).
+        review and  the date we collect the data
+        (\texttt{time\_since\_first\_review}) from
+        the feature the date of the first review (\texttt{first\_review}).
 
     \item We can compute the number of days between the most recent review and
-    the date the data was scraped (time\_since\_last\_review) using the date of the
-    most recent review (last\_review).
+        the date the data was scraped (\texttt{time\_since\_last\_review}) using the date of the
+        most recent review (\texttt{last\_review}).
 \end{itemize}
 
 \subsection{Binning Predictors}
@@ -130,15 +155,15 @@ In our dataset, we peform the following binning:
 '90-99\%', '100\%',
 
     \item The number of days between the first review and the date we collect the data
-    (time\_since\_first\_review ) will be bin into '0-6 months', '6-12 months', '1-2
+        (\texttt{time\_since\_first\_review}) will be bin into '0-6 months', '6-12 months', '1-2
     years', '2-3 years', '4+ years'
 
     \item The number of days between the most recent review and the date the data was
-    scraped (time\_since\_last\_review ) will be bin into '0-2 weeks','2-8 weeks',
+        scraped (\texttt{time\_since\_last\_review}) will be bin into '0-2 weeks','2-8 weeks',
     '2-6 months', '6-12 months', '1+ year'
 
-    \item Review scores rating (review\_scores\_rating) will be bin into following
-    categories '0-79/100', '80-94/100', '95-100/100'
+    \item Review scores rating (\texttt{review\_scores\_rating}) will be bin into following
+        categories '0-79/100', '80-94/100', '95-100/100'
 \end{itemize}
 
 
@@ -195,70 +220,6 @@ processed in 2 steps:
     \item We then put 0 for others and 1 as an indicator for the appropriate column.
 \end{enumerate}
 
-\noindent Pandas Library provides  the get\_dummies() method to
+\noindent Pandas Library provides  the \texttt{get\_dummies()} method to
 perform One-Hot enconding
-
-%Initially, the dataset contains 106 columns, which
-%consist of 105 features and
-%one response column.  For the initial prepossessing, we perform the following
-%steps:
-%\begin{enumerate}
-
-    %\item It is beyond the scope of this study to explore the natural language
-    %processing for predictive modeling.  Therefore,  we will drop free-text columns
-    %for now, as will other columns that are not useful for predicting price
-    %(e.g., URL, hostname, and other host-related features unrelated to the
-    %property).
-
-    %\item We drop feature constant-valued ﬁelds or duplicate features such as
-      %has\_availability, host\_has\_profile\_pic, is\_business\_travel\_ready,
-      %require\_guest\_phone\_verification, require\_guest\_profile\_picture,
-      %requires\_license
-
-    %\item We eliminate columns with frequent and irreparable missing ﬁelds or set the
-    %missing values to zero where appropriate.
-
-  %\item In chapter ~\ref{c:eda} we plot the distribution of the price to detect
-    %outliers. We recognize that there are some obvious outliers in the
-    %dataset. We remove all the listings with a price higher than \$1000 or \$0.
-
-    %\item We introduce new attributes from the existing ones such as
-    %host\_days\_active,\newline
-    %time\_since\_first\_review, time\_since\_last\_review from host\_since,
-    %first\_review, last\_review respectively.
-
-    %\item We perform  transformation some features (price, security\_deposit,
-    %cleaning\_fee, extra\_people) into an integer (e.g., by removing the dollar sign
-    %in prices)
-
-    %\item For amenities columns: we extract a collection of the more important amenities
-    %by removing those add relatively little information or are relatively unhelpful
-    %in separating between different listings. Amenity features where either the true
-    %or the false category contains less than 10\% of listings will be eliminated.
-    %We ended up retaining the following amenities : air\_conditioning, bed\_linen, tv, coffee\_machine, cooking\_basics,
-    %white\_goods, elevator, child\_friendly, parking, host\_greeting,
-    %internet, long\_term\_stays, pets\_allowed, private\_entrance,
-    %self\_check\_in.
-
-    %\item Some features (host\_response\_rate, time\_since\_first\_review,
-    %time\_since\_first\_review, review\_scores\_rating are separated into "bins" for
-    %analysis.
-
-    %\item We construct one-hot encoding \footnote{
-    %Encode categorical features as a one-hot numeric array} for categorical
-    %features.
-
-    %%\item We drop multicollinearity columns.
-
-    %\item We correct the skewness of some numerical features and target variable using
-    %logarithm transformation.
-
-%\end{enumerate}
-
-
-
-
-
-
-
 

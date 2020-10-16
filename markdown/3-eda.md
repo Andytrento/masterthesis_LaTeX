@@ -210,25 +210,116 @@ Lastly, we also plotted time series charts to check for trends and seasonality.
 
 ==*Question: how long have hosts been listing properties on Airbnb in London?*==
 
-Answer: the oldest London listing that is currently live on Airbnb was first listed on the site in August 2008. From 2011 onwards, the number of listings started increasing considerably. However, growth in the number of new hosts (of those currently listing on the site) has been decreasing since 2015, when the UK government introduced a law in 2015 making it illegal to let short-term residential properties for more than 90 nights a year.
+First, we examine how long hosts have been listing properties on Airbnb in New York.Of the Airbnb hosts that are active on the site, the first joined on 22 August 2008, and the most recent joined on 03 December 2019.
 
-A high level of seasonality is evident, with notable peaks in the summer when people put properties online to take advantage of the increased number of tourists in the summer holidays.
 
-There is a big peak in the number of hosts joining Airbnb in 2015. This could be a response to the government legislation, as existing hosts may have created new accounts in order to re-list their properties and get around the 90 day limit.
+From 2011 onwards, the number of listings started growing considerably. However, growth in the number of new hosts (of those currently listed on the site) has decreased since mid-2014.
+
+Strong evidence of seasonality was found in Figure ABC. The number of hosts joining Airbnb peaked in the summer because people put properties online to utilize the increased number of tourists in the summer holidays.
 
 
 
 ==*Question: are the different patterns in the growth in the number of hosts and the number of listings due to hosts increasingly owning multiple properties?*==
 
-Answer: there are a number of professional Airbnb management companies which host a large number of listings under a single host profile, particularly from 2013 onwards. The largest manages 1654 listings and is aa management company based in Liverpool operating under the name 'Jp', while the second largest is the management company Veeve, managing 1304 listings.
+Moving on now to consider whether there are different patterns in the increase in the number of hosts and the number of listings caused by hosts increasingly possess multiple properties.
 
-However, there is no consistent upwards trend in the average number of properties managed by each host.
+Several professional Airbnb management companies own many listings under a single host profile, particularly from 2014 onwards. The largest manages 1767 listings, while the second-largest is managing 1717 listings. However, the average number of properties managed by each host shows no steady upwards trend. (Figure 3.19)
+
+      host_since  host_listings_count
+20445 2016-06-06                435.0
+14661 2016-09-16                492.0
+6498  2015-04-07                653.0
+12909 2015-03-30                677.0
+31994 2014-12-14                681.0
+23521 2014-02-14                844.0
+38918 2018-06-11                975.0
+29366 2016-12-16               1068.0
+35568 2014-01-03               1717.0
+37270 2015-11-02               1767.0
 
 
 
 ==*Question: how have prices changed over time?*==
 
-Answer: the average price per night for Airbnb listings in London has increased slightly over the last 10 years. In particular, the top end of property prices has increased, resulting in a larger increase in the mean price compared to the median - e.g. the mean price in 2015 was £95.90, whereas the mean price in 2018 (the last complete year of data) was £111.14.
+In terms of how prices changed over time, Figure ABC shows that the average price per night for Airbnb listings in New York has increased slightly over the last ten years. Particularly, the top-tier property prices have increased, resulting in a more substantial increase in the mean price than the median. 
 
 
+
+![image-20201014094338140](/Users/macbook/Library/Application Support/typora-user-images/image-20201014094338140.png)
+
+
+
+Mean
+
+first_review
+2008-01-01     95.60
+2009-01-01    144.09
+2010-01-01    150.06
+2011-01-01    170.55
+2012-01-01    151.01
+2013-01-01    149.61
+2014-01-01    139.56
+2015-01-01    129.14
+2016-01-01    131.18
+2017-01-01    127.89
+2018-01-01    138.60
+2019-01-01    183.47
+
+
+
+Median 
+
+first_review
+2008-01-01     95
+2009-01-01    125
+2010-01-01    125
+2011-01-01    125
+2012-01-01    120
+2013-01-01    118
+2014-01-01    106
+2015-01-01    100
+2016-01-01     99
+2017-01-01     90
+2018-01-01     99
+2019-01-01    100
+
+
+
+
+
+## Multivariate Exploration
+
+
+
+The goal of this section is to investigate the relationships between pairs of our features. A primary concern when analyzing the relationship between various variables is multicollinearity, a phenomenon in which two or more independent variables substantially correlate(\textcite{cohen2013applied}).
+
+While multicollinearity does not hurt the model's predictive power(\textcite{kutner2005applied}), collinearity can pose problems in the regression context. In particular,  it can be challenging to separate the individual effects of collinear independent variables on the outcome variable.  
+
+A straightforward way to detect collinearity is to construct a correlation matrix among predictors.  An element of this matrix that is large in absolute value indicates a pair of highly correlated variables and are indicative of collinearity issues.
+
+
+
+As shown in Figure ~\ref{fig:correlation-matrix} shows the correlation matrix, areas of multicollinearity are:
+
+- Beds, bedrooms, guests included, and the number of people that property accommodates are highly correlated. 
+- There are strong negative correlations between houses and apartments and between private rooms and entire homes.
+
+
+
+Providing a full remedy for the multicollinearity issue is beyond the scope of this thesis. However, we employ two  simple approaches as followed:
+
+1. The first approach is to drop problematic variables from the regression. 
+2. The second method is to employ regularization techniques, which combat collinearity by using biased models(\ref{sec:penalized_regression_models} ), which reduce the error variance of estimators.
+
+
+
+### Phrases
+
+
+
+These large values are indicative of collinearity issues
+
+In the training set, these two predictors are highly correlated (0.96). We would expect severe collinearity as a result
+
+### Correlation Matrix
 

@@ -1,20 +1,14 @@
-
 Before embarking on developing statistical models and generating predictions, it
 is essential to understand your data. This is typically done using conventional
 numerical and graphical methods. \textcite{tukey1977exploratory} advocated the practice
 of exploratory data analysis (EDA) as a critical part of the scientific process.
 
-
 We present the descriptive statistics of variables in Table
 \ref{tab:descriptive-statistic}
 
-
 \section{Numerical Features}
 \label{sec:numerical_features}
-
-
 \subsection{Price}
-
 The nightly advertised prices range from \$0 to \$10,000. The range is so broad
 because hosts do not understand how to set Airbnb advertised prices.  Figure
 ~\ref{fig:price-distribution-1000} and Figure ~\ref{fig:price-distribution-200}
@@ -79,25 +73,24 @@ their corresponding count.
 
 Manhattan and Brooklyn have the most Airbnb properties, followed by
 Queens (Figure \ref{fig:borough-number-of-listing})
-%\begin{figure}[h]\centering
-    %\caption{Number of Airbnb listings in each New York borough}
-    %\includegraphics[width=\textwidth]{Figure_10.png}
-%\end{figure}
+
+\begin{figure}[H]\centering
+    \caption{Number of Airbnb listings in each New York borough}
+    \includegraphics[width=\textwidth]{Figure_10.png}
+\end{figure}
+
 \begin{figure}[H] \centering
 \caption{Borough Listings}
     \includegraphics[width=0.75\textwidth]{Figure_10_b.png}
     \label{fig:borough-number-of-listing}
 \end{figure}
 
-Top ten neighbourhood with most listings:
-
+Figure below reveal top ten neighbourhood with most listings:
 \begin{figure}[H] \centering
 \caption{Top 10 Neighbourhood with Most Listings}
     \includegraphics[width=\textwidth]{Figure_10_c.png}
     \label{fig:top-ten-most-listing-neighbourhood}
 \end{figure}
-
-
 
 As shown in Figure \ref{fig:median-price-borough} and Figure
 \ref{fig:borough-price-distribution} , Unsurprisingly, Manhattan is the most
@@ -228,8 +221,8 @@ mark of quality, requiring various conditions to be met)  improve the median
 price of Airbnb listing.
 
 \begin{figure}[H]\centering
+    \includegraphics[width=0.45\textwidth]{Figure_16_host_is_superhost.png}
     \caption{host\_is\_superhost}
-    \includegraphics[width=0.75\textwidth]{Figure_16_host_is_superhost.png}
     \label{fig:host_is_superhost}
 \end{figure}
 
@@ -239,12 +232,12 @@ In Figure ~\ref{fig:host_identity_verified}, about 49\% of hosts are verified.
 As with superhost, verifying host's profile (e.g. by providing ID and verifying
 your phone number and email address) can lead to a price premium. The reason for
 this may have something to do with the fact that providing host's verification
-increases the trustworthiness of the host (Ert 2016).
+increases the trustworthiness of the host (\textcite{ert2016trust}).
 
 \begin{figure}[H]
     \centering
+    \includegraphics[width=0.45\textwidth]{Figure_16_host_identity_verified.png}
     \caption{host\_identity\_verified}
-    \includegraphics[width=0.75\textwidth]{Figure_16_host_identity_verified.png}
     \label{fig:host_identity_verified}
 \end{figure}
 
@@ -252,20 +245,20 @@ increases the trustworthiness of the host (Ert 2016).
 
 As shown in figure below, about 40\% of properties are instant bookable. However, the added
 convenience does not seem to have any effect on the median price per night. This
-negative link can be explained by both emotional (Wang \& Nicolau 2017) and
-economic (Benitez-Aurioles, 2018)
+negative link can be explained by both emotional (\textcite{wang2017price}) and
+economic (Benitez 2018) %(\textcite{benitez2018flexible}).
 
 \begin{figure}[H]
     \centering
+    \includegraphics[width=0.45\textwidth]{Figure_16_instant_bookable.png}
     \caption{instant\_bookable}
-    \includegraphics[width=0.75\textwidth]{Figure_16_instant_bookable.png}
     \label{fig:instant_bookable}
 \end{figure}
 
 \subsection{Amenities}
 
 Our goal is to identify which amenities are common and which increase the price
-of an Airbnb listing.  In Figure ABC, we plot the count plot and each amenity's
+of an Airbnb listing. We plot the count plot and each amenity's
 median price to explore the relationship between the amenity and price.
 Amenities then can be split into three groups:
 
@@ -274,19 +267,114 @@ Amenities then can be split into three groups:
   \item The first group contains uncommon amenity, but listings with it have a
     higher median price: Bed linen, Coffee machine, Basic cooking equipment,
     Elevator, Child friendly, Long term stays allowed, Private entrance, Self
-check-in, Pets allowed, Air conditioner
+    check-in, Pets allowed, Washer,dryer and/or dishwasher (white goods), Air
+    conditioner.(See Figure ~\ref{fig:amenities-group1})
 
   \item The second group includes common amenities and listings with it have a
-higher median price: TV, Washer, dryer and/or dishwasher (white goods), Internet
+higher median price: TV, Internet, Air conditioner (See Figure ~\ref{fig:amenities-group2}).
 
   \item The third group comprises uncommon amenities, and listings with it have
     a lower median price: Parking (presumably because these are less likely to
-    be central properties), Greeted by host
+    be central properties), Greeted by host. (See Figure ~\ref{fig:amenities-group3})
 
 \end{enumerate}
 
-%\section{Time Series Analysis}
-%\label{sec:time_series}
+\section{Multivariate Exploration}
+\label{sec:multivariate-exploration}
 
-%Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+The goal of this section is to investigate the relationships between pairs of
+our features. A primary concern when analyzing the relationship between various
+variables is multicollinearity, a phenomenon in which two or more independent
+variables substantially correlate(\textcite{cohen2013applied}).
 
+While multicollinearity does not hurt the model's predictive
+power(\textcite{kutner2005applied}), collinearity can pose problems in the
+regression context. In particular,  it can be challenging to separate the
+individual effects of collinear independent variables on the outcome variable.
+
+A straightforward way to detect collinearity is to construct a correlation
+matrix among predictors.  An element of this matrix that is large in absolute
+value indicates a pair of highly correlated variables and are indicative of
+collinearity issues.
+
+\begin{figure}[H] \centering
+\caption{Correlation Matrix}
+\includegraphics[width=\textwidth,keepaspectratio]{figures/correlation-matrix.png}
+\label{fig:correlation-matrix}
+\end{figure}
+
+As shown in Figure ~\ref{fig:correlation-matrix} shows the correlation matrix,
+areas of multicollinearity are:
+\begin{itemize}
+    \item Beds, bedrooms, guests included, and the number of people that
+        property accommodates are highly correlated.
+    \item There are strong negative correlations between houses and apartments
+        and between private rooms and entire homes.
+\end{itemize}
+
+Providing a full remedy for the multicollinearity issue is beyond the scope of
+this thesis. However, we employ two  simple approaches as followed:
+
+\begin{enumerate}
+    \item The first approach is to drop problematic variables from the regression.
+    \item The second method is to employ regularization techniques, which combat
+        collinearity by using biased models(\ref{sec:penalized_regression_models}),
+        which reduce the error variance of estimators.
+\end{enumerate}
+
+\section{Time Series Analysis}
+\label{sec:time_series}
+
+We now also plotted time series charts to check for trends and seasonality.
+First, we examine how long hosts have been listing properties on Airbnb in New
+York.Of the Airbnb hosts that are active on the site, the first joined on 22
+August 2008, and the most recent joined on 03 December 2019.
+From 2011 onwards, the number of listings started growing considerably. However,
+growth in the number of new hosts (of those currently listed on the site) has
+decreased since mid-2014 (~\ref{fig:number_of_hosts_joining}).
+
+Strong evidence of seasonality was found in Figure
+~\ref{fig:number_of_hosts_joining}. The number of hosts joining Airbnb peaked in
+the summer because people put properties online to utilize the increased number
+of tourists in the summer holidays.
+
+
+%\begin{figure}[H] \centering
+%\caption{New York hosts joining Airbnb and listings getting their first review
+%in each month}
+    %\includegraphics[width=\textwidth]{Figure_1.png}
+    %\label{fig:number_of_airbnb_listing}
+%\end{figure}
+
+
+\begin{figure}[H] \centering
+\caption{Number of hosts joining Airbnb each month}
+    \includegraphics[width=\textwidth]{Figure_2.png}
+    \label{fig:number_of_hosts_joining}
+\end{figure}
+
+%\begin{figure}[H] \centering
+    %\caption{Number of Airbnb listings getting their first review each month}
+    %\includegraphics[width=\textwidth]{Figure_3.png}
+    %\label{}
+%\end{figure}
+
+%\begin{figure}[H] \centering
+%\caption{Change per year in the number of listings per host on Airbnb in New
+%York}
+    %\includegraphics[width=\textwidth]{Figure_4.png}
+%\end{figure}
+
+In terms of how prices changed over time, Figure
+~\ref{fig:prices-change-by-years} shows that the average price per night for
+Airbnb listings in New York has increased slightly over the
+last ten years. Particularly, the top-tier property prices have increased,
+resulting in a more substantial increase in the mean price than the median.
+
+\begin{figure}[H] \centering
+\caption{Change per year in the nightly price of Airbnb listings in New York}
+    \includegraphics[width=\textwidth]{Figure_5.png}
+    \label{fig:prices-change-by-years}
+\end{figure}
+
+%Question: how long have hosts been listing properties on Airbnb in London?
