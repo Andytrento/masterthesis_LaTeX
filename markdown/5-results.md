@@ -75,3 +75,61 @@ Apart from its superior performance, a benefit of using ensembles of decision tr
 However, the training MSE and test MSE are quite different. Therefore the model could be improved even further with hyperparameter tuning.
 
 
+
+##### Spatial Importance
+
+Another important finding was the role of location features play in predicting price. In particular, location features located in Manhattan and Brooklyn borough are in the top 20 important variables to predict the price. In Manhattan and Brooklyn, tourists can find neighborhoods for almost any interest. Particularly, 
+
+​	
+
+- Sightseeing: Midtown is the heart of New York shopping and theater and home to some of its most iconic buildings.
+- Nightlife:  More clubs are found in “Hell’s Kitchen,”
+- Food: In Soho, tourists can experience a host of the highest-rated dining places.
+- Theather: There is no more convenient home base than the Theater District,  located in 42nd Street to 50th Street west of Sixth Avenue. 
+- For families: Upper West Side is bordered with parks and playgrounds and boasting both a children’s museum and the famed dinosaurs at the American Museum of Natural. This neighborhood is also considered one of the safest areas of New York City
+
+neighbourhood Midtown 0.025008 Manhattan
+neighbourhood Hell’s Kitchen 0.018545 Manhattan
+neighbourhood East Village 0.015763 Manhattan
+property type Other 0.015168
+neighbourhood Bedford-Stuyvesant 0.014314 Brooklyn
+neighbourhood West Village 0.014031 Manhattan
+neighbourhood Chelsea 0.013612 Manhattan
+neighbourhood Lower East Side 0.011874 Manhattan
+neighbourhood Bushwick 0.011854 Brooklyn
+neighbourhood Upper West Side 0.011682 Manhattan
+neighbourhood Washington Heights 0.011659 Manhattan
+neighbourhood SoHo 0.011582 Manhattan
+room type Shared room 0.011304
+neighbourhood Greenwich Village 0.010347 Manhattan
+room type Hotel room 0.009697
+neighbourhood Theater District 0.008575 Manhattan
+neighbourhood Williamsburg 0.008490 Brooklyn
+neighbourhood Crown Heights 0.007979 Brooklyn
+
+
+
+
+
+```python
+#Review the listings by boroname
+plt.figure(figsize=(10,10))
+sns.scatterplot(x='longitude', y='latitude', hue='boroname',s=20, data=data)
+```
+
+
+
+
+
+```python
+#Plot the count by borough into a map
+fig,ax = plt.subplots(1,1, figsize=(10,10))
+bc_geo.plot(column='id', cmap='viridis_r', alpha=.5, ax=ax, legend=True)
+bc_geo.apply(lambda x: ax.annotate(s=x.boroname, color='black', xy=x.geometry.centroid.coords[0],ha='center'), axis=1)
+plt.title("Number of Airbnb Listings by NYC Borough")
+plt.axis('off')
+```
+
+
+
+![image-20201016110023827](/Users/macbook/Library/Application Support/typora-user-images/image-20201016110023827.png)

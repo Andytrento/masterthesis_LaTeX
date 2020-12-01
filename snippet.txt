@@ -113,3 +113,62 @@ self\_check\_in
 \end{figure}
 ```
 
+
+@misc{,
+  title = {{}},
+  howpublished = "\url{}"
+}
+
+
+%\begin{figure}[H] \centering
+    %\includegraphics[width=\textwidth]{Figure_8.png}
+    %\caption{Median Price of Airbnb Listing Accommodating Different Number Of Guests}
+    %\label{fig:median-price-accommodates}
+%\end{figure}
+
+
+%\begin{figure}[H]
+    %\centering
+    %\begin{subfigure}[b]{0.4\textwidth}
+        %\centering
+        %%\caption{Property Type Pie Chart}
+        %\includegraphics[width=\textwidth]{Figure_8_b.png}
+        %\label{fig:property_type_pie}
+    %\end{subfigure}
+    %\begin{subfigure}[b]{0.4\textwidth}
+        %\centering
+        %%\caption{Property Type Bar Chart}
+        %\includegraphics[width=\textwidth]{Figure_8_c.png}
+        %%\label{fig:property_type_bar}
+    %\end{subfigure}
+
+    %\caption{Median Rental Price by the Number of Beds and Bathrooms}
+    %\label{fig:property_type}
+%\end{figure}
+
+%Manhattan and Brooklyn have the most Airbnb properties, followed by
+%Queens (Figure \ref{fig:borough-number-of-listing})
+%Unsurprisingly, Manhattan is the most expensive borough followed by Brooklyn.
+%This makes sense because in those two neighborhoods tourists can find
+%neighborhoods for almost any interest. For example:
+%\begin{itemize}
+  %\item Sightseeing: Midtown is the heart of New York shopping and theater and
+    %home to some of its most iconic buildings.
+  %\item Nightlife:  More clubs are found in “Hell’s Kitchen,”
+  %\item Food: In Soho, tourists can experience a host of the highest-rated
+    %dining places.
+  %\item Theather: There is no more convenient home base than
+    %the Theater District,  located in 42nd Street to 50th Street west of Sixth
+    %Avenue.
+  %\item For families: Upper West Side is bordered with parks and playgrounds and
+  %boasting both a children’s museum and the famed dinosaurs at the American Museum
+  %of Natural. This neighborhood is also considered one of the safest areas of New
+  %York City
+%\end{itemize}
+
+%%\begin{figure}[H]\centering
+    %%\caption{Number of Airbnb listings in each New York borough}
+    %%\includegraphics[width=\textwidth]{Figure_10.png}
+%%\end{figure}
+
+ \hat{y} = \hat{\beta_0} + \hat{\beta_1} X_1 + \hat{\beta_2} X_2 + ... + \hat{\beta_p} X_p

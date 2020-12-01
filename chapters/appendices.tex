@@ -1,18 +1,5 @@
-
-%\pdfbookmark[section]{Stylized facts of the distribution of firm size and growth}{Stylized facts of the distribution of firm size and growth}
-%\section*{Stylized facts of the distribution of firm size and growth}
-%\addcontentsline{toc}{section}{Stylized facts of the distribution of firm size and growth}
-
-%\label{sect_appendices_facts}
-
-
 \section{Tables}
-\label{sec:table}
-
-%\input{tikz/test.tex}
-%\input{tikz/number-of-hosts-joining.tex}
-
-\begin{table}[htp]
+\begin{table}[H]
     \centering
     \caption{Summary Statistics}
     \label{tab:descriptive-statistic}
@@ -61,7 +48,8 @@ self\_check\_in          &     0.260 &        0.438 \\
 \end{table}
 
 \begin{flushleft}
-\begin{table}[htpb]
+\begin{table}[H]
+    \small
     \caption{The variable list}
     \label{tab:variable-list}
     \begin{tabular}{ll}
@@ -134,355 +122,156 @@ self\_check\_in          &     0.260 &        0.438 \\
 \end{table}
 \end{flushleft}
 
-%\begin{figure}[h!] \centering
-%\caption{New York hosts joining Airbnb and listings getting their first review
-%in each month}
-    %\includegraphics[width=\textwidth]{Figure_1.png}
-    %\label{fig:number_of_airbnb_listing}
 
-%\end{figure}
+\section{Figures}
 
+\begin{figure}[H] \centering
+    \includegraphics[width=\textwidth]{accommodates-countplot.pdf}
+    \caption{Number of Listings by Accomodates}
+    \label{fig:accommodates-countplot}
+\end{figure}
 
-%\begin{figure}[h!] \centering
-%\caption{Number of hosts joining Airbnb each month}
-    %\includegraphics[width=\textwidth]{Figure_2.png}
-    %\label{fig:number_of_hosts_joining}
+\begin{figure}[H] \centering
+    \includegraphics[width=\textwidth]{bathrooms-countplot.pdf}
+    \caption{Number of Listings by Number of Bathrooms }
+    \label{fig:bathrooms-countplot}
+\end{figure}
 
-%\end{figure}
+\begin{figure}[H] \centering
+    \includegraphics[width=\textwidth]{bedrooms-countplot.pdf}
+    \caption{Number of Listings by Number of Bedrooms }
+    \label{fig:bedrooms-countplot}
+\end{figure}
 
+\begin{figure}[H] \centering
+    \includegraphics[width=\textwidth]{beds-countplot.pdf}
+    \caption{Number of Listings by Number of Beds }
+    \label{fig:beds-countplot}
+\end{figure}
 
-%\begin{figure}[h!] \centering
-    %\caption{Number of Airbnb listings getting their first review each month}
-    %\includegraphics[width=\textwidth]{Figure_3.png}
-    %\label{}
-%\end{figure}
+% ------------------------------
+% median price by accommodates, bathrooms, bedrooms, beds
+\begin{figure}[H] \centering
+    \includegraphics[width=\textwidth]{median-price-by-accommodates.pdf}
+    \caption{Median Price By Accommodates}
+    \label{fig:median-price-by-accommodates}
+\end{figure}
 
+\begin{figure}[H] \centering
+    \includegraphics[width=\textwidth]{median-price-by-bathrooms.pdf}
+    \caption{Median Price By  Number of Bathrooms }
+    \label{fig:median-price-by-bathrooms}
+\end{figure}
 
-%\begin{figure}[h!] \centering
-%\caption{Change per year in the number of listings per host on Airbnb in New
-%York}
-    %\includegraphics[width=\textwidth]{Figure_4.png}
-    %\label{}
-%\end{figure}
-
-
-%\begin{figure}[h!] \centering
-%\caption{Change per year in the nightly price of Airbnb listings in New York}
-    %\includegraphics[width=\textwidth]{Figure_5.png}
-    %\label{}
-%\end{figure}
-
-
-%\begin{figure}[ht!]
-    %%\centering
-    %\begin{center}
-
-    %\caption{Price Distribution}
-    %\begin{subfigure}[b]{0.48\textwidth}
-        %\centering
-        %\caption{Airbnb advertised price up to \$1000}
-        %\includegraphics[width=\textwidth]{Figure_6.png}
-        %\label{fig:price-distribution-1000}
-    %\end{subfigure}
-    %\begin{subfigure}[b]{0.48\textwidth}
-        %\centering
-        %\caption{Airbnb advertised price up to \$200}
-        %\includegraphics[width=\textwidth]{Figure_7.png}
-        %\label{fig:price-distribution-200}
-    %\end{subfigure}
-
-    %\end{center}
-%\end{figure}
-
-%\begin{figure}[ht] \centering
-%\caption{Median Price of Airbnb Listing Accommodating Different Number Of Guests}
-    %\includegraphics[width=\textwidth]{Figure_8.png}
-    %\label{fig:median-price-accommodates}
-%\end{figure}
+\begin{figure}[H] \centering
+    \includegraphics[width=\textwidth]{median-price-by-bedrooms.pdf}
+    \caption{Median Price By Number of Bedrooms}
+    \label{fig:median-price-by-bedrooms}
+\end{figure}
 
 
-%\begin{figure}[ht] \centering
-%\caption{Histogram Plot of Accomodate, Bathrooms, Bedrooms, and Beds}
-    %\includegraphics[width=\textwidth]{Figure_9.png}
-    %\label{fig:hist-accommodates}
-%\end{figure}
+\begin{figure}[H] \centering
+    \includegraphics[width=\textwidth]{median-price-by-beds.pdf}
+    \caption{Median Price By Number of Beds}
+    \label{fig:median-price-by-beds}
+\end{figure}
 
-%\begin{figure}[h]\centering
-    %\caption{Number of Airbnb listings in each New York borough}
-    %\includegraphics[width=\textwidth]{Figure_10.png}
-%\end{figure}
+% ------------------------------
 
-
-%\begin{figure}[ht] \centering
-%\caption{Borough Listings}
-    %\includegraphics[width=\textwidth]{Figure_10_b.png}
-    %\label{fig:borough-number-of-listing}
-%\end{figure}
-
-%top 10 neighbourhood has most listings
-
-%\begin{figure}[ht] \centering
-%\caption{Top 10 Neighbourhood with Most Listings}
-    %\includegraphics[width=\textwidth]{Figure_10_c.png}
-    %\label{fig:top-ten-most-listing-neighbourhood}
-%\end{figure}
-
-%\begin{figure}[h]\centering
-    %\caption{Median Price of Airbnb listings in each New York borough}
-    %\includegraphics[width=\textwidth]{Figure_11.png}
-%\end{figure}
-
-%\begin{figure}[h]\centering
-    %\caption{Borough Price Distribution}
-    %\includegraphics[width=\textwidth]{Figure_11_b.png}
-%\end{figure}
-
-%\begin{figure}[ht!]
-    %\begin{center}
-
-    %\begin{subfigure}[b]{0.48\textwidth}
-        %\centering
-        %\caption{Room Type Pie Chart}
-        %\includegraphics[width=\textwidth]{Figure_12_room_type_pie.png}
-        %\label{fig:room_type_pie}
-    %\end{subfigure}
-    %\begin{subfigure}[b]{0.48\textwidth}
-        %\centering
-        %\caption{Room Type Bar Chart}
-        %\includegraphics[width=\textwidth]{Figure_12_room_type.png}
-        %\label{fig:room_type_bar}
-    %\end{subfigure}
-
-    %\end{center}
-%\end{figure}
-
-
-%\begin{figure}[ht!]
-    %\begin{center}
-
-    %\begin{subfigure}[b]{0.48\textwidth}
-        %\centering
-        %\caption{Property Type Pie Chart}
-        %\includegraphics[width=\textwidth]{Figure_12_property_type_pie.png}
-        %\label{fig:property_type_pie}
-    %\end{subfigure}
-    %\begin{subfigure}[b]{0.48\textwidth}
-        %\centering
-        %\caption{Property Type Bar Chart}
-        %\includegraphics[width=\textwidth]{Figure_12_property_type.png}
-        %\label{fig:property_type_bar}
-    %\end{subfigure}
-
-    %\end{center}
-%\end{figure}
-
-%\begin{figure}[h]\centering
-    %\caption{Overall Listing Rating}
-    %\includegraphics[width=\textwidth]{Figure_13.png}
-    %\label{fig:overall-listing}
-%\end{figure}
-
-
-%\begin{figure}[ht!]
-    %\centering
-    %\begin{subfigure}[b]{0.48\textwidth}
-        %\centering
-        %\caption{Time Since First Review}
-        %\includegraphics[width=\textwidth]{Figure_15_time_since_first_review.png}
-        %\label{fig:time_since_first_review}
-    %\end{subfigure}
-    %\begin{subfigure}[b]{0.48\textwidth}
-        %\centering
-        %\caption{Time Since Last Review}
-        %\includegraphics[width=\textwidth]{Figure_15_time_since_last_review.png}
-        %\label{fig:time_since_last_review}
-    %\end{subfigure}
-    %\caption{First and Last Review}
-%\end{figure}
-
-
-%\begin{figure}[ht!]
-    %%\centering
-    %\begin{center}
-
-    %%\caption{Price Distribution}
-    %\begin{subfigure}[b]{0.3\textwidth}
-        %\centering
-        %\caption{host\_identity\_verified}
-        %\includegraphics[width=\textwidth]{Figure_16_host_identity_verified.png}
-    %\end{subfigure}
-    %\hfill
-    %\begin{subfigure}[b]{0.3\textwidth}
-        %\centering
-        %\caption{host\_is\_superhost}
-        %\includegraphics[width=\textwidth]{Figure_16_host_is_superhost.png}
-    %\end{subfigure}
-    %\hfill
-    %\begin{subfigure}[b]{0.3\textwidth}
-        %\centering
-        %\caption{instant\_bookable}
-        %\includegraphics[width=\textwidth]{Figure_16_instant_bookable.png}
-    %\end{subfigure}
-    %\hfill
-    %\begin{subfigure}[b]{0.3\textwidth}
-        %\centering
-        %\caption{child\_friendly}
-        %\includegraphics[width=\textwidth]{Figure_17_child_friendly.png}
-    %\end{subfigure}
-    %\hfill
-    %\begin{subfigure}[b]{0.3\textwidth}
-        %\centering
-        %\caption{elevator}
-        %\includegraphics[width=\textwidth]{Figure_17_elevator.png}
-    %\end{subfigure}
-    %\hfill
-    %\begin{subfigure}[b]{0.3\textwidth}
-        %\centering
-        %\caption{host\_greeting}
-        %\includegraphics[width=\textwidth]{Figure_17_host_greeting.png}
-    %\end{subfigure}
-    %\hfill
-    %\begin{subfigure}[b]{0.3\textwidth}
-        %\centering
-        %\caption{internet}
-        %\includegraphics[width=\textwidth]{Figure_17_internet.png}
-    %\end{subfigure}
-    %\hfill
-    %\begin{subfigure}[b]{0.3\textwidth}
-        %\centering
-        %\caption{long\_term\_stays}
-        %\includegraphics[width=\textwidth]{Figure_17_long_term_stays.png}
-    %\end{subfigure}
-    %\begin{subfigure}[b]{0.3\textwidth}
-        %\centering
-        %\caption{parking}
-        %\includegraphics[width=\textwidth]{Figure_17_parking.png}
-    %\end{subfigure}
-    %\hfill
-    %\begin{subfigure}[b]{0.3\textwidth}
-        %\centering
-        %\caption{pets\_allowed}
-        %\includegraphics[width=\textwidth]{Figure_17_pets_allowed.png}
-    %\end{subfigure}
-    %\hfill
-    %\begin{subfigure}[b]{0.3\textwidth}
-        %\centering
-        %\caption{private\_entrance}
-        %\includegraphics[width=\textwidth]{Figure_17_private_entrance.png}
-    %\end{subfigure}
-    %\hfill
-    %\begin{subfigure}[b]{0.3\textwidth}
-        %\centering
-        %\caption{self\_check\_in}
-        %\includegraphics[width=\textwidth]{Figure_17_self_check_in.png}
-    %\end{subfigure}
-
-    %\end{center}
-%\end{figure}
-
-
-
+% Amenity Group 1
 \begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.3\textwidth}
-        \centering
-        %\caption{host\_identity\_verified}
-        \includegraphics[width=\textwidth]{figures/amenities/group1/bed_linen.png}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
-        \centering
-        %\caption{host\_is\_superhost}
-        \includegraphics[width=\textwidth]{figures/amenities/group1/coffee_machine.png}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
-        \centering
-        %\caption{instant\_bookable}
-        \includegraphics[width=\textwidth]{figures/amenities/group1/cooking_basics.png}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
-        \centering
-        %\caption{child\_friendly}
-        \includegraphics[width=\textwidth]{figures/amenities/group1/elevator.png}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
-        \centering
-        %\caption{elevator}
-        \includegraphics[width=\textwidth]{figures/amenities/group1/child_friendly.png}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
-        \centering
-        %\caption{host\_greeting}
-        \includegraphics[width=\textwidth]{figures/amenities/group1/long_term_stays.png}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
-        \centering
-        %\caption{internet}
-        \includegraphics[width=\textwidth]{figures/amenities/group1/private_entrance.png}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
-        \centering
-        %\caption{long\_term\_stays}
-        \includegraphics[width=\textwidth]{figures/amenities/group1/self_checkin.png}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.3\textwidth}
-        \centering
-        %\caption{parking}
-        \includegraphics[width=\textwidth]{figures/amenities/group1/pets_allowed.png}
-    \end{subfigure}
-    \caption{Amenities Group 1}
-    \label{fig:amenities-group1}
+\centering
+    \caption{Elevator and Bed Linen}
+    \includegraphics[width=\linewidth]{figures/amenities/group1/elevator.png}
+    %\caption{Caption 1}
+    \vspace{0.3cm}
+    \includegraphics[width=\linewidth]{figures/amenities/group1/bed_linen.png}
+    %\caption{Caption 2}
+    \label{fig:elevator-and-bed-linen}
 \end{figure}
 
 
 \begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.3\textwidth}
-        \centering
-        %\caption{host\_identity\_verified}
-        \includegraphics[width=\textwidth]{figures/amenities/group2/tv.png}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
-        \centering
-        %\caption{host\_is\_superhost}
-        \includegraphics[width=\textwidth]{figures/amenities/group2/internets.png}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
-        \centering
-        %\caption{instant\_bookable}
-        \includegraphics[width=\textwidth]{figures/amenities/group2/air_conditioning.png}
-    \end{subfigure}
+\centering
+\caption{White Goods and Pets Allowed}
+    \includegraphics[width=\linewidth]{figures/amenities/group1/white_goods.png}
+    %\caption{Caption 1}
+    \vspace{0.5cm}
+    \includegraphics[width=\linewidth]{figures/amenities/group1/pets_allowed.png}
+    %\caption{Caption 2}
+    \label{fig:white-goods-and-pets-allowed}
+    \
+\end{figure}
 
-    \caption{Amenities Group 2}
-    \label{fig:amenities-group2}
+\begin{figure}[H]
+\centering
+\caption{Self Check In and Coffee Machine}
+    \includegraphics[width=\linewidth]{figures/amenities/group1/self_checkin.png}
+    %\caption{Caption 1}
+    \vspace{0.5cm}
+    \includegraphics[width=\linewidth]{figures/amenities/group1/coffee_machine.png}
+    %\caption{Caption 2}
+    \label{fig:self-checkin-and-coffee-machine}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.3\textwidth}
-        \centering
-        %\caption{host\_identity\_verified}
-        \includegraphics[width=\textwidth]{figures/amenities/group3/parking.png}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
-        \centering
-        %\caption{host\_is\_superhost}
-        \includegraphics[width=\textwidth]{figures/amenities/group3/host_greetings.png}
-    \end{subfigure}
-
-    \caption{Amenities Group 3}
-    \label{fig:amenities-group3}
+    \caption{Long Term Stays and Child Friendly}
+    \includegraphics[width=\linewidth]{figures/amenities/group1/long_term_stays.png}
+    %\caption{Caption 1}
+    \vspace{0.5cm}
+    \includegraphics[width=\linewidth]{figures/amenities/group1/child_friendly.png}
+    %\caption{Caption 2}
+    \label{fig:long-term-stays-and-child-friendly}
 \end{figure}
 
+\begin{figure}[H]
+\centering
+\caption{Private Entrance and Cooking Basics}
+    \includegraphics[width=\linewidth]{figures/amenities/group1/private_entrance.png}
+    %\caption{Caption 1}
+    \vspace{0.5cm}
+    \includegraphics[width=\linewidth]{figures/amenities/group1/cooking_basics.png}
+    %\caption{Caption 2}
+    \label{fig:private-entrance-and-cooking-basics}
+\end{figure}
+
+
+% Amenity Group 2
+\begin{figure}[H]
+\centering
+\caption{TV and Internet}
+    \includegraphics[width=\linewidth]{figures/amenities/group2/tv.png}
+    %\caption{Caption 1}
+    \vspace{0.5cm}
+    \includegraphics[width=\linewidth]{figures/amenities/group2/internet.png}
+    %\caption{Caption 2}
+    \label{fig:tv-and-internet}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \caption{Air Conditioner}
+    \includegraphics[width=\linewidth]{figures/amenities/group2/air_conditioning.png}
+    \label{fig:air-conditioner}
+\end{figure}
+
+% Amenity Group 3
+\begin{figure}[H]
+\centering
+    \caption{Parking and Host Greeting}
+    \includegraphics[width=\linewidth]{figures/amenities/group3/parking.png}
+    \vspace{0.5cm}
+    \includegraphics[width=\linewidth]{figures/amenities/group3/host_greetings.png}
+    \label{fig:parking-and-host-greeting}
+\end{figure}
+
+
+\begin{figure}[H] \centering
+\includegraphics[width=\textwidth,keepaspectratio]{correlation-matrix.png}
+\caption{Correlation Matrix}
+\label{fig:correlation-matrix}
+\end{figure}
 
 \begin{figure}[H] \centering
 \caption{Histogram of Feature Distribution}
@@ -490,15 +279,18 @@ self\_check\_in          &     0.260 &        0.438 \\
 \label{fig:histogram-feature-distribution}
 \end{figure}
 
-
+% from pre_processing.py
+%Other than availability_90 and host_days_active, the remaining numerical
+%features are all postively skewed and could benefit from log transformation.
 \begin{figure}[H] \centering
 \caption{Histogram of Numerical Feature Distribution Before Log Transform }
-\includegraphics[width=\textwidth]{Figure_0_hist_before_log_transform.png}
+\includegraphics[width=\textwidth]{before-log.png}
 \label{fig:histogram-before-transform}
 \end{figure}
 
+% from pre_processing.py
 \begin{figure}[H] \centering
 \caption{Histogram of Numerical Feature Distribution After Log Transform }
-\includegraphics[width=\textwidth]{Figure_0_hist_after_log_transform.png}
+\includegraphics[width=\textwidth]{after-log.png}
 \label{fig:histogram-after-transform}
 \end{figure}

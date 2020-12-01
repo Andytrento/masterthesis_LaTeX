@@ -1,7 +1,7 @@
 \documentclass[a4paper,12pt,twoside]{report}
 \usepackage[margin=1in,headsep=1cm,footskip=1cm]{geometry}
 	\setcounter{tocdepth}{3}
-	\setcounter{secnumdepth}{3}
+	\setcounter{secnumdepth}{5}
 \usepackage[main=english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{fancyhdr}
@@ -14,7 +14,7 @@
 	%\bibliographystyle{chicago}
 \usepackage{setspace}
 	%\setstretch{1.0} %1.0 or 1.3 or 1.6 or \singlespacing or \onehalfspacing or \doublespacing
-	\parindent 1cm
+	\parindent 0cm
 	\parskip 6pt
 \usepackage{tikz}
 	\usetikzlibrary{arrows,chains,matrix,positioning,scopes}
@@ -34,6 +34,7 @@
 \usepackage{bookmark}
 \usepackage{booktabs}
 \usepackage[labelfont=bf,center]{caption}
+\captionsetup{belowskip=0pt}
 \newcommand{\source}[1]{\caption*{Source: {#1}} }
 \usepackage{subcaption}
 \usepackage{enumerate}
@@ -55,12 +56,25 @@
 \usepackage{url}
 \usepackage{csquotes}
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e}
-%\usepackage[backend=biber, style=authoryear-icomp]{biblatex}
+\usepackage[backend=biber, style=authoryear-icomp]{biblatex}
 %\usepackage[backend=biber,style=numeric,autocite=plain,sorting=none]{biblatex}
-\usepackage[backend=biber]{biblatex}
+%\usepackage[backend=biber]{biblatex}
 \addbibresource{andyMaster2020.bib}
 \DeclareUnicodeCharacter{2212}{-}
+\DeclareUnicodeCharacter{0301}{\'{e}}
 \usepackage{blindtext}
+\usepackage{cleveref}
+
+\usepackage{titlesec}
+\titlespacing*{\section}
+{0pt}{2ex}{2ex}
+\titlespacing*{\subsection}
+{0pt}{2ex}{2ex}
+\titlespacing*{\subsubsection}
+{0pt}{2ex}{2ex}
+
+\newcounter{para}
+\newcommand\mypara{\par\refstepcounter{para}\thepara\space}
 
 \begin{document}
 \begin{onehalfspace}
@@ -163,33 +177,33 @@ Prof. \textsc{XXX} % Supervisor name - remove the \href bracket to remove the li
 \input{chapters/1-intro.tex}
 
 
+\clearpage
+\chapter{Related Works}
+\label{c:related-works}
+\input{chapters/related-works.tex}
 
 \clearpage
-\chapter{Data Set}
-\label{c:dataset}
-\input{chapters/2-dataset.tex}
+\chapter{Background}
+\label{c:background}
+\input{chapters/background.tex}
 
 \clearpage
-\chapter{Exploratory Data Analysis}
-\label{c:eda}
-\input{chapters/3-eda.tex}
+\chapter{Methodology}
+\label{c:methodology}
+\input{chapters/3-methodology.tex}
 
 \clearpage
-\chapter{Data Modelling Methods}
-\label{c:methods}
-\input{chapters/4-methods.tex}
-
-
-\clearpage
-\chapter{Experiments and Results}
-\label{c:results}
-\input{chapters/5-results.tex}
+\chapter{Experiment and Findings}
+\label{c:findings}
+\input{chapters/4-findings.tex}
 
 
 \clearpage
-\chapter{Conclusion}
+\chapter{Conclusion and Future Works}
 \label{c:conclusion}
-\input{chapters/6-conclusion.tex}
+\input{chapters/5-conclusion.tex}
+
+
 
 \clearpage
 	\setcounter{chapter}{1}
@@ -205,6 +219,9 @@ Prof. \textsc{XXX} % Supervisor name - remove the \href bracket to remove the li
 \label{chap_appendices}
 \input{chapters/appendices.tex}
 
+%\chapter*{Appendix B}
+%\label{c:appendix_b}
+%\input{chapters/appendix-B.tex}
 
 
 \clearpage

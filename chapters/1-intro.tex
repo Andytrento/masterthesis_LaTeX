@@ -1,15 +1,74 @@
-Pricing a rental property on Airbnb is a challenging task for the owner as it
-determines the number of customers for the place
+\section{Motivation}
+ \label{sec:motivation}
 
-\section{Motivation and Goals}
-\label{sect_intro_motivation}
+In recent years, the so-called sharing economy has spread all over the world.
+People share access to resources such as their homes, cars, and even personal
+time with other people in a peer-to-peer manner. One of the triumphant stories
+of the sharing economy in the travel and hospitality industry is Airbnb. Airbnb
+is a company that pioneers in deploying this business model to let individuals'
+share' extra space in their homes with those who need temporary accommodation
+via the online marketplace. In 2017, Airbnb generated approximately \$93 million
+in profit out of \$2.6 billion in revenue \parencite{zaleski2018}.  As of 2020,
+there are 2.9 million hosts on Airbnb, with over 7 million accommodations in
+100,000 cities worldwide (Airbnb 2020).
 
-In recent years
+An accurate prediction of the rental price helps maximize the Airbnb host's
+profits and develop their business. So far, however, little attention has been
+paid to empirical Airbnb rental price prediction. This indicates a need to have
+an Airbnb rental price prediction model to address the research gap.
 
+New York City (NYC) is one of Airbnb's most popular destinations with over
+50,000 listings and ranked fourth in the most popular cities for booking
+experiences \parencite{airbnbfacts}. With plenty of listing and booking
+activities, New York City serves as an excellent example for the study of Airbnb
+pricing.
 
-\section{Literature Review}
-\label{sect_intro_literature_review}
+\section{Objectives}
+\label{sec:objectives}
 
-Parts of the existing literature on property pricing focus on non-shared
-property purchase or rental price prediction
+This study systematically reviews the data for Airbnb in New York City, aiming:
+\begin{enumerate}
+  \item To employ machine learning techniques to build a model to predict Airbnb
+    listing price in New York City.
+  \item To identify which features of an Airbnb listing are most important  in
+predicting the price
+\end{enumerate}
+
+\section{Research Methodologies}
+This thesis contains four main research methodology:
+\begin{enumerate}
+\item Relative to collecting data method, we scrape the information about Airbnb
+  listing from the InsideAirbnb website.
+\item The data preprocessing step includes cleaning, data filtering,
+  normalization, transformation, etc. The product of this step is the final
+  training set ready for model fitting.
+\item Exploratory analysis: we use visual methods to perform initial
+  investigations on data to discover patterns and trends.
+\item Model fitting:
+  We applied several machine learning algorithms to make Airbnb rental price
+  prediction.  The comparisons between the prediction performance of those
+  models are presented in chapter \ref{c:findings}.
+\end{enumerate}
+
+\section{Thesis Outline}
+The overall structure of the study takes the form of five chapters. A short
+description of the chapter is listed as follows:
+
+\begin{itemize}
+\item Chapter 2 - Related Works: This chapter reviews the past literature on the
+pricing in the sharing economy based accommodation rentals.
+\item Chapter 3 - Background: This chapter will briefly introduce machine
+  learning concepts and considerations when applying machine learning to predictive
+  modeling. Furthermore,  we describe the machine learning algorithms used to
+  solve the research question.
+\item Chapter 4 - Methodology: The third chapter is concerned with the
+  methodology used for this study.
+\item Chapter 5 - Experiment and Findings: In the fourth chapter, we will present the results
+  we have obtained throughout our analysis.
+\item Chapter 6 - Conclusions and Future Works: In the fifth chapter, we will
+  answer the research question based on the findings obtained in Chapter
+  \ref{c:findings}.
+  Furthermore, we will state some possible future adjustments that could improve
+  the results we have obtained in this thesis.
+\end{itemize}
 

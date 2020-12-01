@@ -609,5 +609,17 @@ variables.
 
 
 
-Consider a predictor variable that has a single unique value; we refer to
-this type of data as a zero variance predictor. For some models, such an uninformative variable may have little effect on the calculations.
+Consider a predictor variable that has a single unique value; we refer to this type of data as a zero variance predictor. For some models, such an uninformative variable may have little effect on the calculations.
+
+
+
+
+
+- [ ] Add a snapshot of dataframe like
+
+
+
+![image-20201019165625770](/Users/macbook/Library/Application Support/typora-user-images/image-20201019165625770.png)
+
+
+
