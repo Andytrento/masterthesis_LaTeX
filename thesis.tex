@@ -56,12 +56,38 @@
 \usepackage{url}
 \usepackage{csquotes}
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e}
-\usepackage[backend=biber, style=authoryear-icomp]{biblatex}
+\usepackage[
+backend=biber,
+natbib=true,
+style=authoryear-icomp,
+sorting=none,
+maxbibnames=99,
+maxcitenames=2
+]{biblatex}
+%\usepackage[backend=biber, style=authoryear-icomp,maxbibnames=99]{biblatex}
 %\usepackage[backend=biber,style=numeric,autocite=plain,sorting=none]{biblatex}
 %\usepackage[backend=biber]{biblatex}
 \addbibresource{andyMaster2020.bib}
 \DeclareUnicodeCharacter{2212}{-}
 \DeclareUnicodeCharacter{0301}{\'{e}}
+\DeclareFieldFormat[article]{volume}{Vol. #1, }
+\DeclareFieldFormat[article]{number}{\addspace No. #1}
+
+%\renewbibmacro*{journal+issuetitle}{%
+  %\usebibmacro{journal}%
+  %\setunit*{\addcomma\space}% was: \setunit*{\addspace}
+  %\iffieldundef{series}
+    %{}
+    %{\newunit
+     %\printfield{series}%
+     %\setunit{\addcomma\space}}% was: \setunit{\addspace}
+  %\usebibmacro{volume+number+eid}%
+  %\setunit{\addspace}%
+  %\usebibmacro{issue+date}%
+  %\setunit{\addcolon\space}%
+  %\usebibmacro{issue}%
+  %\newunit}
+
 \usepackage{blindtext}
 \usepackage{cleveref}
 
@@ -108,7 +134,7 @@ Author:\\
 \begin{minipage}{0.4\textwidth}
 \begin{flushright} \large
 Supervisor:\\
-Prof. \textsc{XXX} % Supervisor name - remove the \href bracket to remove the link
+Prof. \textsc{Marco Bee} % Supervisor name - remove the \href bracket to remove the link
 \end{flushright}
 \end{minipage}\\[3cm]
 
@@ -155,16 +181,16 @@ Prof. \textsc{XXX} % Supervisor name - remove the \href bracket to remove the li
 \addcontentsline{toc}{chapter}{List of tables}
 \listoftables
 
-\clearpage
-	\fancyhf{}
-	\rhead{\thepage}
-	\lhead{\textbf{Abstract}}
-\phantomsection
-%\pdfbookmark[chapter]{Abstract}{Abstract}
-\addcontentsline{toc}{chapter}{Abstract}
-\chapter*{Abstract}
-\label{c:abstract}
-\input{chapters/abstract.tex}
+%\clearpage
+	%\fancyhf{}
+	%\rhead{\thepage}
+	%\lhead{\textbf{Abstract}}
+%\phantomsection
+%%\pdfbookmark[chapter]{Abstract}{Abstract}
+%\addcontentsline{toc}{chapter}{Abstract}
+%\chapter*{Abstract}
+%\label{c:abstract}
+%\input{chapters/abstract.tex}
 
 
 \clearpage
@@ -193,7 +219,7 @@ Prof. \textsc{XXX} % Supervisor name - remove the \href bracket to remove the li
 \input{chapters/3-methodology.tex}
 
 \clearpage
-\chapter{Experiment and Findings}
+\chapter{Experiments and Findings}
 \label{c:findings}
 \input{chapters/4-findings.tex}
 
