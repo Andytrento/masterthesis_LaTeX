@@ -201,12 +201,12 @@ transform them by replacing them with their logarithm. Figure
 some of the distributions become normal. More importantly, the outcome variable
 price appears much more normally distributed.
 
-\subsection{!htbpandling Categorical Attributes}
+\subsection{Handling Categorical Attributes}
 
 One of the significant problems with machine learning is that many algorithms
-cannot work directly with categorical data (non-numerical values).  !htbpence, we
+cannot work directly with categorical data (non-numerical values).  Hence, we
 need a way to convert categorical data into a numerical form, and our machine
-learning algorithm can take in that as input. In this study, we use  One-!htbpot
+learning algorithm can take in that as input. In this study, we use  One-Hot
 Encoding, one of the most widely used encoding techniques.  One-hot encoding is
 processed in 2 steps:
 \begin{enumerate}
@@ -237,7 +237,7 @@ because hosts do not understand how to set Airbnb advertised prices.  Figure
 ~\ref{fig:price-distribution-1000} and Figure ~\ref{fig:price-distribution-200}
  show the distributions of price up to \$1,000 and \$200 respectively. While the
 price's range is extensive, most of its values concentrate on the range \$10 to
-\$1000.  !htbpence, for minimal values under \$10, we will increase them to \$10,
+\$1000.  Hence, for minimal values under \$10, we will increase them to \$10,
 and values above \$1,000 will be reduced to \$1,000.
 
 \begin{figure}[!htbp] \centering
@@ -252,7 +252,7 @@ and values above \$1,000 will be reduced to \$1,000.
         \label{fig:price-distribution-200}
 \end{figure}
 
-\subsubsection*{!htbpost Listings Count}
+\subsubsection*{Host Listings Count}
 
 The median number of listings that the host of each listing has is 1. The mean
 is higher (8 in total) due to some hosts running many listings. About 55\% of
@@ -272,7 +272,7 @@ to have a positive impact on Airbnb rental price (\cite{ert2016trust};
 \cite{chen2017consumer}; \cite{wang2017price}; \cite{gibbs2018use}). Figures
 \ref{fig:median-price-by-accommodates} - ~\ref{fig:median-price-by-beds} show that the more people a listing
 accommodates, the more number of bedrooms it has, the more bathrooms it has, the
-higher the price they can charge their customers. !htbpowever, we can see that those
+higher the price they can charge their customers. However, we can see that those
 figures' general trends are similar, which implies that those features may be
 highly correlated.
 
@@ -301,7 +301,7 @@ neighborhoods for almost any interest. For example:
 \begin{itemize}
   \item Sightseeing: Midtown is the heart of New York shopping and theater and
     home to some of its most iconic buildings.
-  \item Nightlife:  More clubs are found in “!htbpell’s Kitchen,”
+  \item Nightlife:  More clubs are found in “Hell’s Kitchen,”
   \item Food: In Soho, tourists can experience a host of the highest-rated
     dining places.
   \item Theather: There is no more convenient home base than
@@ -314,32 +314,12 @@ neighborhoods for almost any interest. For example:
 \end{itemize}
 
 
-%\begin{figure}[!htbp] \centering
-    %\includegraphics[width=\textwidth]{Figure_10_b.png}
-    %\caption{Borough Listings}
-    %\label{fig:borough-number-of-listing}
-%\end{figure}
-
 \begin{figure}[!htbp] \centering
   \includegraphics[width=0.9\textwidth]{share-of-borough.png}
     \caption{Borough Listings}
     \label{fig:borough-number-of-listing}
 \end{figure}
 
-%Figure below reveal top ten neighbourhood with most listings:
-%\begin{figure}[!htbp] \centering
-    %\includegraphics[width=\textwidth]{Figure_10_c.png}
-    %\label{fig:top-ten-most-listing-neighbourhood}
-    %\caption{Top 10 Neighbourhood with Most Listings}
-%\end{figure}
-
-
-
-%\begin{figure}[!htbp]\centering
-    %\includegraphics[width=0.75\textwidth]{Figure_11.png}
-    %\caption{Median Price of Airbnb listings in each New York borough}
-    %\label{fig:median-price-borough}
-%\end{figure}
 
 \begin{figure}[!htbp]\centering
     \includegraphics[width=0.9\textwidth]{borough-price-distribution.png}
@@ -407,7 +387,7 @@ review ratings of 80 or below, most listings with a review have received a
 As shown in Figure \ref{fig:price_by_review_score_rating}, the review score
 rating has a positive effect on the median rental price. It all makes intuitive
 sense customers are willing to pay a premium price for a listing with a good
-reputation.  !htbpowever, the evidence for the relationship between is inconclusive.
+reputation.  However, the evidence for the relationship between is inconclusive.
 Many studies (\cite{chen2017consumer}; \cite{gibbs2018use};
 \cite{wang2017price}) have shown that the overall rating score has a positive
 impact on rental price, while others (\cite{li2016pros}; \cite{zhang2017key})
@@ -430,7 +410,7 @@ suggests the otherwise.
 As can be seen from the Figure ~\ref{fig:time_since_first_review}, the most
 common period in which  Airbnb listings had their first review is 2-3 years,
 which means that many listings on the site have been active for at least a
-couple of years. !htbpowever,  fewer listings have been on Airbnb for more than four
+couple of years. However,  fewer listings have been on Airbnb for more than four
 years.
 
 \begin{figure}[!htbp]\centering
@@ -450,23 +430,6 @@ or more, there's no difference in median price for other categories
     \caption{Median Price By Time Since First Review}
     \label{fig:time_since_first_review_price}
 \end{figure}
-
-%\begin{figure}[!htbp]
-    %\centering
-    %\begin{subfigure}[b]{0.48\textwidth}
-        %\centering
-        %\includegraphics[width=\textwidth]{Figure_15_time_since_first_review.png}
-        %\caption{Time Since First Review}
-        %\label{fig:time_since_first_review}
-    %\end{subfigure}
-    %\begin{subfigure}[b]{0.48\textwidth}
-        %\centering
-        %\includegraphics[width=\textwidth]{Figure_15_price_by_time_since_first_review.png}
-        %\caption{Median Price By Time Since First Review}
-        %\label{fig:time_since_first_review_price}
-    %\end{subfigure}
-    %\caption{Time Since First Review}
-%\end{figure}
 
 The bar plot ~\ref{fig:time_since_last_review} reveals that the most
 common period since a listing received its last review is 2-8 weeks, which means
@@ -495,23 +458,6 @@ review.
         \label{fig:time_since_last_review_price}
 \end{figure}
 
-%\begin{figure}[!htbp]
-    %\centering
-    %\begin{subfigure}[b]{0.48\textwidth}
-        %\centering
-        %\includegraphics[width=\textwidth]{Figure_15_time_since_last_review.png}
-        %\caption{Time Since Last Review}
-        %\label{fig:time_since_last_review}
-    %\end{subfigure}
-    %\begin{subfigure}[b]{0.48\textwidth}
-        %\centering
-        %\includegraphics[width=\textwidth]{Figure_15_price_by_time_since_last_review.png}
-        %\caption{Median Price By Time Since Last Review}
-        %\label{fig:time_since_last_review_price}
-    %\end{subfigure}
-    %\caption{Time Since Last Review}
-%\end{figure}
-
 \subsection{Boolean features}
 \label{sec:boolean_features}
 
@@ -524,7 +470,7 @@ price).
 \subsubsection*{Superhosts}
 
 Figure ~\ref{fig:host_is_superhost} shows that about 23\% of hosts have a
-superhost badge. !htbposts with superhost status usually charge higher prices. A
+superhost badge. Hosts with superhost status usually charge higher prices. A
 possible explanation for this might be that people are willing to pay a premium
 price because they consider superhost status a mark of quality.  This also
 accords with earlier studies(\cite{gibbs2018use},
@@ -532,11 +478,11 @@ accords with earlier studies(\cite{gibbs2018use},
 
 \begin{figure}[!htbp]\centering
     \includegraphics[width=\textwidth]{host-is-superhost.png}
-    \caption{Count Plot and Median Price By Whether A !htbpost Is a Superhost}
+    \caption{Count Plot and Median Price By Whether A Host Is a Superhost}
     \label{fig:host_is_superhost}
 \end{figure}
 
-\subsubsection*{!htbpost verification}
+\subsubsection*{Host verification}
 In Figure ~\ref{fig:host_identity_verified}, about 49\% of hosts are verified.
 Consistent with the literature (\cite{chen2017consumer}; \cite{wang2017price}),
 the figure showed that hosts with verified profiles gain a price premium. The
@@ -546,16 +492,9 @@ their trustworthiness and, therefore, can charge a higher rental price.
 
 \begin{figure}[!htbp]\centering
     \includegraphics[width=\textwidth]{host-identity-verified.png}
-    \caption{Count Plot and Median Price By Whether A !htbpost Is Verified}
+    \caption{Count Plot and Median Price By Whether A Host Is Verified}
     \label{fig:host_identity_verified}
 \end{figure}
-
-%\begin{figure}[!htbp]
-    %\centering
-    %\includegraphics[width=0.45\textwidth]{Figure_16_host_identity_verified.png}
-    %\caption{host\_identity\_verified}
-    %\label{fig:host_identity_verified}
-%\end{figure}
 
 \subsubsection*{Instant booking}
 
@@ -625,11 +564,6 @@ matrix among predictors.  An element of this matrix that is large in absolute
 value indicates a pair of highly correlated variables and are indicative of
 collinearity issues.
 
-%\begin{figure}[!htbp] \centering
-%\includegraphics[width=\textwidth,keepaspectratio]{correlation-matrix.png}
-%\caption{Correlation Matrix}
-%\label{fig:correlation-matrix}
-%\end{figure}
 
 As shown in Figure ~\ref{fig:correlation-matrix} shows the correlation matrix,
 areas of multicollinearity are:
@@ -641,7 +575,7 @@ areas of multicollinearity are:
 \end{itemize}
 
 Providing a full remedy for the multicollinearity issue is beyond the scope of
-this thesis. !htbpowever, we employ two  simple approaches as followed:
+this thesis. However, we employ two  simple approaches as followed:
 
 \begin{enumerate}
     \item The first approach is to drop problematic variables from the regression.
@@ -657,7 +591,7 @@ We now also plotted time series charts to check for trends and seasonality.
 First, we examine how long hosts have been listing properties on Airbnb in New
 York.Of the Airbnb hosts that are active on the site, the first joined on 22
 August 2008, and the most recent joined on 03 December 2019.
-From 2011 onwards, the number of listings started growing considerably. !htbpowever,
+From 2011 onwards, the number of listings started growing considerably. However,
 growth in the number of new hosts (of those currently listed on the site) has
 decreased since mid-2014 (The trend curve in Figure
 ~\ref{fig:number_of_hosts_joining}).
@@ -668,37 +602,11 @@ the summer because people put properties online to utilize the increased number
 of tourists in the summer holidays.
 
 
-%\begin{figure}[!htbp] \centering
-%\caption{New York hosts joining Airbnb and listings getting their first review
-%in each month}
-    %\includegraphics[width=\textwidth]{Figure_1.png}
-    %\label{fig:number_of_airbnb_listing}
-%\end{figure}
-
-
-%\begin{figure}[!htbp] \centering
-    %\includegraphics[width=\textwidth]{Figure_2.png}
-    %\caption{Number of hosts joining Airbnb each month}
-    %\label{fig:number_of_hosts_joining}
-%\end{figure}
-
-
 \begin{figure}[!htbp] \centering
     \includegraphics[width=\textwidth]{number-of-host-joining-each-month.pdf}
     \caption{Number of hosts joining Airbnb each month}
     \label{fig:number_of_hosts_joining}
 \end{figure}
-%\begin{figure}[!htbp] \centering
-    %\caption{Number of Airbnb listings getting their first review each month}
-    %\includegraphics[width=\textwidth]{Figure_3.png}
-    %\label{}
-%\end{figure}
-
-%\begin{figure}[!htbp] \centering
-%\caption{Change per year in the number of listings per host on Airbnb in New
-%York}
-    %\includegraphics[width=\textwidth]{Figure_4.png}
-%\end{figure}
 
 In terms of how prices changed over time, Figure
 ~\ref{fig:prices-change-by-years} shows that the average price per night for
@@ -706,11 +614,6 @@ Airbnb listings in New York has increased slightly over the
 last ten years. Particularly, the top-tier property prices have increased,
 resulting in a more substantial increase in the mean price than the median.
 
-%\begin{figure}[!htbp] \centering
-    %\includegraphics[width=\textwidth]{Figure_5.png}
-    %\caption{Change per year in the nightly price of Airbnb listings in New York}
-    %\label{fig:prices-change-by-years}
-%\end{figure}
 
 \begin{figure}[!htbp] \centering
     \includegraphics[width=\textwidth]{price-trend.png}
@@ -718,3 +621,102 @@ resulting in a more substantial increase in the mean price than the median.
     \label{fig:prices-change-by-years}
 \end{figure}
 
+
+\section{Modelling}
+
+\subsection{Training and Test Sets}
+\label{sec:train_test_split}
+
+The train-test split procedure is used to estimate machine learning algorithms'
+performance when making predictions on data not used to train the model.  We
+randomly split the dataset into 80\% and 20\% of listings for training and test
+sets, respectively. The training set is used to fit the model, and the test
+set is used to evaluate the fit machine learning model. The objective is to
+estimate the machine learning model's performance on new data: data not used to
+train the model.
+
+The scikit-learn library provides an implementation of the train-test-split
+procedure via the \texttt{train\_test\_split()} function.
+
+\subsection{Findings}
+\label{sec:findings}
+
+A summary of of results is reported in Table ~\ref{tab:results}
+
+\begin{table}[!htbp]
+  \centering
+  \caption{Results}
+  \label{tab:results}
+  \begin{tabular}{lllll}
+    \hline
+    ML Algorithm & Training MSE & Test MSE & Training $R^2$ & Test $R^2$ \\
+    \hline
+    Linear Regresion & 0.1291 &  8.5E21 &  0.7019 & -1.9E22 \\
+    Ridge Regression  & 0.1291 & 0.138 & 0.7019 &  0.6857 \\
+    Lasso Regression & 0.1351 & 0.1441 & 0.688 & 0.6718 \\
+    XGboost &  0.0798 & 0.1173 & 0.8157 &  0.7328 \\
+  \end{tabular}
+\end{table}
+
+
+As expected in ~\ref{linear-regression} incorporating such a large number
+of features (309) makes the linear regression model overfit the data. As
+shown in Table ~\ref{tab:results}, while training MSE of the linear regression
+model is quite good, the model performs poorly on the test set both in terms of
+in terms of $MSE$ and $R^2$.
+
+By performing k-fold cross-validation with ten folds, we can find the tuning
+parameter's value that results in the smallest cross-validation error is 115.
+The test's MSE is associated with this value of  is 0.138.  The result
+represents a considerable improvement of ridge regression over the test MSE we
+got using least square regression.
+
+
+Using cross-validation , we find the optimized penalty value $\lambda$ for lasso
+is 0.005.  The associated test MSE is 0.1441, which is slightly higher than the
+test set MSE of the ridge regression.  Recall from that the advantage of using
+lasso regression over ridge regression is that lasso performs feature selection.
+Lasso picked 153 variables while eliminated the other 125 features.
+
+
+As shown by the Table ~\ref{tab:results}, XGboost consistently outperforms these
+competing approaches in both mean squared error and R-squared.  With this model,
+the features explain approximately 73\% of the target variable's variance and
+have smaller MSE than the other regression model.
+
+\begin{table}[!htbp]
+  \centering
+  \caption{XGBoost Top 20 Feature Weights}
+  \label{tab:xgb-weights}
+  \begin{tabular}{lr}
+    \toprule
+    {} &    weight \\
+    \midrule
+    room\_type\_Entire home/apt        &  0.336396 \\
+    bathrooms                        &  0.032001 \\
+    neighbourhood\_Midtown            &  0.025008 \\
+    neighbourhood\_Hell's Kitchen     &  0.018545 \\
+    neighbourhood\_East Village       &  0.015763 \\
+    property\_type\_Other              &  0.015168 \\
+    neighbourhood\_Bedford-Stuyvesant &  0.014314 \\
+    neighbourhood\_West Village       &  0.014031 \\
+    neighbourhood\_Chelsea            &  0.013612 \\
+    neighbourhood\_Lower East Side    &  0.011874 \\
+    neighbourhood\_Bushwick           &  0.011854 \\
+    neighbourhood\_Upper West Side    &  0.011682 \\
+    neighbourhood\_Washington Heights &  0.011659 \\
+    neighbourhood\_SoHo               &  0.011582 \\
+    room\_type\_Shared room            &  0.011304 \\
+    neighbourhood\_Greenwich Village  &  0.010347 \\
+    room\_type\_Hotel room             &  0.009697 \\
+    neighbourhood\_Theater District   &  0.008575 \\
+    neighbourhood\_Williamsburg       &  0.008490 \\
+    neighbourhood\_Crown Heights      &  0.007979 \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+Another important finding from \ref{tab:xgb-weights} was the role of location
+features play in predicting price. In particular, location features located in
+Manhattan and Brooklyn borough are in the top 20 important variables to predict
+the price. This is consistent with what we observed in \ref{eda:neighbourhood}.

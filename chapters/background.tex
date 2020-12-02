@@ -1,7 +1,77 @@
+%In this chapter, we start by presenting the concept of machine learning and
+%supervised regression learning. Then, we discuss the details of various
+%regression methods that have been explored during the course of this project.
 
-In this chapter, we start by presenting the concept of machine learning and
-supervised regression learning. Then, we discuss the details of various
-regression methods that have been explored during the course of this project.
+\section{Related Works}
+
+As discussed in Section ~\ref{sec:objectives}, our primary focus is to answer
+the prediction question. However, besides the literature on using machine
+learning techniques for price prediction, we first briefly review the related
+works on the inference side.
+
+\subsection{Inference}
+
+While some research has been carried out on hotel price determinants, few
+empirical investigations into the price determinants of the non-hotel
+accommodation offer have been conducted.  Furthermore, most researchers
+investigating the price determinant of sharing economy based accommodation have
+utilized the hedonic price model.
+
+\textcite{monty2003hedonic} assessed the price determinants of bed and breakfast
+amenities and confirmed the positive effects of a hot tub, a private bath, and a
+larger room on room price.  In an analysis of the impact of private tourist
+accommodation facilities on prices, \textcite{portolan2013impact} found that the
+presence of free parking places and sea view could be associated with a higher
+room rate.  Both of the above studies recognized that location has a vital
+influence on the price.
+
+In recent years, there has been an increasing amount of literature on the price
+determinants of Airbnb.  Several studies (\textcite{gutt2015sharing};
+\textcite{ikkala2014defining} ) have shown that hosts who offer accommodation to
+rent on Airbnb.com usually charge higher prices if their accommodation has
+received high star ratings.  Using a dataset from New York City,
+\textcite{li2016pros,} showed that properties managed by professional hosts earn
+more in daily revenue, have higher occupancy rates, and are less likely to exit
+the market than properties owned by nonprofessional hosts.
+\textcite{kakar2016effects} measures the impact of information on hosts’ racial
+background on Airbnb listing prices in San Francisco and found that Hispanic
+hosts and Asian hosts, on average, have a lower list price relative to their
+white counterparts.
+
+\textcite{wang2017price} analyzed the Airbnb data from 33 countries and concluded
+that 24 out of 25 variables within five categories (host attributes, site, and
+property attributes, amenities and services, rental rules, and the number of
+online reviews and ratings) are good predictors of price.  In a similar study,
+\textcite{cai2019price} examines the impacts of five groups of
+explanatory variables on Airbnb price in Hong Kong.
+
+
+\subsection{Prediction}
+
+To date, there is little published research on applying machine learning
+techniques to predict the price of Airbnb listing.
+\textcite{tang2015neighborhood} work on the task of price prediction for San
+Francisco Airbnb listings by turning the regression problem into a binary
+classification problem.
+\textcite{li2016reasonable} has attempted to create a price prediction model for
+Airbnb in different cities by using the clustering method with the distance of
+the property to the city landmarks as the clustering feature.
+In more recent work, \textcite{kalehbasti2019airbnb}  try to develop a reliable
+price prediction model using machine learning, deep learning, and natural
+language processing techniques.
+
+
+This study aims to contribute to this growing area of research by utilizes a
+holistic approach. In particular, the contribution is as followed:
+\begin{itemize}
+  \item We rely on "domain knowledge" in the feature engineering process (as
+    demonstrated in Chapter ~\ref{c:data-analysis}).
+  \item We make use of visualization techniques to gain insights from data.
+  \item We introduce regularization techniques to improve the disadvantage of the
+  traditional ordinary least square model.
+  \item We present the Boosting modeling strategy, a machine learning approach
+    that performs well when there are many predictors as a baseline model.
+\end{itemize}
 
 \section{Machine Learning}
 
@@ -441,27 +511,9 @@ trees with only a few depths.
 Another reason for using shallow trees in boosting is that it makes the model
 smaller in terms of memory and makes prediction faster.
 
-%While having an advantage of being easily be visualized and understood, the main
-%downside of decision trees is that they tend to overfit and provide poor
-%generalization performance.  Therefore, in most applications, the ensemble
-%methods such as boosting are usually used in place of a single decision tree.
-%Trees can make excellent base learners for boosting for the following reasons:
-%\begin{enumerate}
-    %\item By limiting their depth, they can be weak learners.
-    %\item We can add together separate trees easily.
-    %\item Trees can be created quickly.
-%\end{enumerate}
-
 While there are many boosting methods available, in this study, we focus on
 Gradient boosting trees and its high-performance implementation, XGBoost. In
 gradient boosting trees,  regression trees are chosen  as the base learners.
-%We illustrate this approach in Figure ~\ref{fig:gradient-boosting-illustration}
-
-%\begin{figure}[H]\centering
-    %\includegraphics[width=0.75\textwidth]{gradient-boosting-illustration.png}
-    %\caption{Gradient Boosting Approach}
-    %\label{fig:gradient-boosting-illustration}
-%\end{figure}
 
 \textcite{kuhn2013applied} illustrate the Gradient Boosting for
 Regression algorithm as followed:
@@ -497,14 +549,6 @@ iterations (K) by using cross-validation techniques.
 
 \subsubsection*{XGBoost}
 
-%XGBoost is an end-to-end tree boosting system developed by
-%\textcite{chen2016xgboost} based on a
-%gradient boosting framework. Since its introduction in 2014, this algorithm has
-%been credited with winning numerous Kaggle competitions and driving under the
-%hood for several cutting-edge industry applications. Furthermore, XGBoost has
-%been shown to provide state-of-the-art results for diverse problems, including
-%web text classification, customer behavior prediction, motion detection, and
-%malware classification \textcite{chen2016xgboost}.
 XGBoost is an end-to-end tree boosting system developed by
 \textcite{chen2016xgboost} based on a
 gradient boosting framework.  XGBoost has been shown to provide state-of-the-art
@@ -521,8 +565,7 @@ of from the rest of other gradient boosting algorithms. That is:
     \item Extra randomization parameter
     \item Implementation on single, distributed systems and out-of-core computation
 \end{itemize}
-%Several reasons explain why XGBoost is popular in the machine learning
-%community, which includes:
+
 Besides these superior features, there are other reasons why XGBoost is getting
 popular in the machine learning community:
 \begin{itemize}
@@ -534,14 +577,6 @@ popular in the machine learning community:
     \item Cloud Integration: Supports AWS, Azure, and Yarn clusters and works
         well with Flink, Spark, and other ecosystems.
 \end{itemize}
-
-%Since its introduction in 2014, this algorithm has
-%been credited with winning numerous Kaggle competitions and being the driving
-%force under the hood for several cutting-edge industry applications. Futhermore,
-%XGBoost has been shown to provide state-of-the-art results for diverse problems,
-%including web text classification, customer behavior prediction, motion
-%detection, and malware classification \textcite{chen2016xgboost}
-%\textcite{nielsen2016tree}.
 
 While XGBoost is suitable for predicting, it does so at the expense of its
 interpretability.  As shown in Figure
