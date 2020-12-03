@@ -587,22 +587,37 @@ this thesis. However, we employ two  simple approaches as followed:
 \subsection{Time Series Analysis}
 \label{sec:time_series}
 
-We now also plotted time series charts to check for trends and seasonality.
-First, we examine how long hosts have been listing properties on Airbnb in New
-York.Of the Airbnb hosts that are active on the site, the first joined on 22
-August 2008, and the most recent joined on 03 December 2019.
-From 2011 onwards, the number of listings started growing considerably. However,
-growth in the number of new hosts (of those currently listed on the site) has
-decreased since mid-2014 (The trend curve in Figure
-~\ref{fig:number_of_hosts_joining}).
+%We now also plotted time series charts to check for trends and seasonality.
+%First, we examine how long hosts have been listing properties on Airbnb in New
+%York.Of the Airbnb hosts that are active on the site, the first joined on 22
+%August 2008, and the most recent joined on 03 December 2019.
+%From 2011 onwards, the number of listings started growing considerably. However,
+%growth in the number of new hosts (of those currently listed on the site) has
+%decreased since mid-2014 (The trend curve in Figure
+%~\ref{fig:number_of_hosts_joining}).
 
-Strong evidence of seasonality was found in  seasonal curve (Figure
-~\ref{fig:number_of_hosts_joining}). The number of hosts joining Airbnb peaked in
-the summer because people put properties online to utilize the increased number
-of tourists in the summer holidays.
+%Strong evidence of seasonality was found in  seasonal curve (Figure
+%~\ref{fig:number_of_hosts_joining}). The number of hosts joining Airbnb peaked in
+%the summer because people put properties online to utilize the increased number
+%of tourists in the summer holidays.
 
+Figure ~\ref{fig:number_of_hosts_joining} shows the classical additive
+decomposition of the number of (currently live) hosts joining the site.  This is
+accomplished by using \texttt{seasonal\_decompose()} function from the python
+library \texttt{statsmodels}. It decomposes a time series into the overall trend,
+seasonality (a significant factor in the tourism industry), and the unexplained
+residuals.
 
-\begin{figure}[!htbp] \centering
+Regarding trend estimation, from 2011 onwards, the number of listings started
+growing considerably. However, growth in the number of new hosts (of those
+currently listed on the site) has decreased since mid-2014.
+
+Strong evidence of seasonality was also found. The number of hosts joining
+Airbnb peaked in the summer because people put properties online to utilize the
+increased number of tourists in the summer holidays.
+
+\begin{figure}[!htbp]
+  \centering
     \includegraphics[width=\textwidth]{number-of-host-joining-each-month.pdf}
     \caption{Number of hosts joining Airbnb each month}
     \label{fig:number_of_hosts_joining}
@@ -635,7 +650,7 @@ set is used to evaluate the fit machine learning model. The objective is to
 estimate the machine learning model's performance on new data: data not used to
 train the model.
 
-The scikit-learn library provides an implementation of the train-test-split
+Python scikit-learn library provides an implementation of the train-test-split
 procedure via the \texttt{train\_test\_split()} function.
 
 \subsection{Findings}
@@ -686,11 +701,11 @@ have smaller MSE than the other regression model.
 
 \begin{table}[!htbp]
   \centering
-  \caption{XGBoost Top 20 Feature Weights}
+  \caption{XGBoost Top 20 Important Features}
   \label{tab:xgb-weights}
   \begin{tabular}{lr}
     \toprule
-    {} &    weight \\
+    {Feature} &    Weight \\
     \midrule
     room\_type\_Entire home/apt        &  0.336396 \\
     bathrooms                        &  0.032001 \\
