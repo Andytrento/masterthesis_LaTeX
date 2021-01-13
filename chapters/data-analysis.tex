@@ -28,7 +28,7 @@ before it can be used for the desired purpose such as visualization, model
 building. This is often called data pre-processing.
 Since there are several reasons why data could be “dirty,” there are just as
 various techniques to “clean” it.  For this analysis, we will take a look at
-three key methods that illustrate ways in which data may be “cleaned,” or better
+few key methods that illustrate ways in which data may be “cleaned,” or better
 organized, or scrubbed of potentially incorrect, incomplete, or duplicated data.
 
 \subsection{Data Filtering}
@@ -292,11 +292,18 @@ factors in the pricing strategy of Airbnb.  A listing close to the city center
 a higher room rate.  \cite{perez2018and} also found that a listing located
 within sightseeing, eating, or shopping area gains a price premium.
 
-As shown in Figure \ref{fig:borough-number-of-listing} and Figure
-\ref{fig:borough-price-distribution}, Manhattan and Brookly have most Airbnb
-properties are the most expensive boroughs, which is not surprising because they
-are the famous tourist attractions.  In those two boroughs, tourists can find
-neighborhoods for almost any interest. For example:
+%As shown in Figure \ref{fig:borough-number-of-listing} and Figure
+%\ref{fig:boroughs-kernel-density-estimate} shows , Manhattan and Brookly have most Airbnb
+%properties are the most expensive boroughs, which is not surprising because they
+%are the famous tourist attractions.  In those two boroughs, tourists can find
+%neighborhoods for almost any interest. For example:
+As shown in Figure \ref{fig:borough-number-of-listing}, Manhattan and Brooklyn
+have the most Airbnb properties.
+Figure \ref{fig:boroughs-kernel-density-estimate} plots the distributions of New
+York boroughs using kernel density estimation. Manhattan and Brooklyn are the most
+expensive boroughs, which is not surprising because they are famous tourist
+attractions.  In those two boroughs, tourists can find neighborhoods for almost
+any interest. For example:
 
 \begin{itemize}
   \item Sightseeing: Midtown is the heart of New York shopping and theater and
@@ -322,9 +329,9 @@ neighborhoods for almost any interest. For example:
 
 
 \begin{figure}[!htbp]\centering
-    \includegraphics[width=0.9\textwidth]{borough-price-distribution.png}
-    \caption{Borough Price Distribution}
-    \label{fig:borough-price-distribution}
+    \includegraphics[width=0.9\textwidth]{kernel-density-estimate.png}
+    \caption{Kernel Density Estimates of Airbnb Rental Price in New York Boroughs}
+    \label{fig:boroughs-kernel-density-estimate}
 \end{figure}
 
 \subsubsection*{Property and room types}
@@ -555,7 +562,7 @@ variables is multicollinearity, a phenomenon in which two or more independent
 variables substantially correlate(\textcite{cohen2013applied}).
 
 While multicollinearity does not hurt the model's predictive
-power(\textcite{kutner2005applied}), collinearity can pose problems in the
+power (\textcite{kutner2005applied}), collinearity can pose problems in the
 regression context. In particular,  it can be challenging to separate the
 individual effects of collinear independent variables on the outcome variable.
 
@@ -650,7 +657,7 @@ set is used to evaluate the fit machine learning model. The objective is to
 estimate the machine learning model's performance on new data: data not used to
 train the model.
 
-Python scikit-learn library provides an implementation of the train-test-split
+The Python scikit-learn library provides an implementation of the train-test-split
 procedure via the \texttt{train\_test\_split()} function.
 
 \subsection{Findings}
